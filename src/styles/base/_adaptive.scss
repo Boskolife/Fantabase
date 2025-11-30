@@ -1,6 +1,6 @@
 $maxWidth: 1440;
 $maxWidthContainer: 1320;
-$minWidth: 320;
+$minWidth: 375;
 
 @mixin adaptive-value ($property, $startSize, $minSize, $type) {
     $addSize: $startSize - $minSize;

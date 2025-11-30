@@ -4,13 +4,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + TS</title>
+  <title>Fantabase</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
   <link rel="stylesheet" href="/styles/main.scss">
+  <script type="module" src="/js/main.js"></script>
 </head>
 
 <body>
   {{> header }}
-  <script type="module" src="/js/main.ts"></script>
+  <main id="main-content">
+    <section class="hero content-section">
+      <div class="container">
+        <div class="hero_inner">
+          <h1 class="hero_title">Fantabase™ </h1>
+          <p class="hero_subtitle">Fantasy Football Supercharged by AI</p>
+          <picture class="hero_image">
+            <source srcset="./images/hero-image-mob.png" media="(max-width: 768px)">
+            <img src="./images/hero-image.png" alt="Fantabase AI-powered Fantasy Football platform interface">
+          </picture>
+        </div>
+      </div>
+    </section>
+    <section id="broken" class="broken content-section">
+      <picture class="broken_image">
+        <source srcset="./images/broken-img-mob.png" media="(max-width: 768px)">
+        <img src="./images/broken-img.png" alt="Illustration showing fragmented Fantasy Football experience">
+      </picture>
+      <div class="container">
+        <h2 class="broken_title">Fantasy Football is <strong>Broken</strong></h2>
+        <div class="broken_inner">
+          <article class="broken_item">
+            <h3 class="broken_item-title">Wasted time</h3>
+            <p class="broken_item-description">Managers spend 6–8 hours/week juggling dozens of apps (Twitter, ESPN, YouTube, podcasts, etc.) to track their teams. Users often waste 30–120 minutes per day switching apps and searching for relevant info.</p>
+          </article>
+          <article class="broken_item">
+            <h3 class="broken_item-title">Information overload</h3>
+            <p class="broken_item-description">It's a part-time job of sifting through noise. Fantabase cuts the 8 hours of homework and just gives you the fun, relevant insights in a feed you'll actually enjoy.</p>
+          </article>
+          <article class="broken_item">
+            <h3 class="broken_item-title">Fragmented insights</h3>
+            <p class="broken_item-description">No single platform provides a unified view. Players miss opportunities and lose matchups simply because they couldn't find or act on critical news in time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

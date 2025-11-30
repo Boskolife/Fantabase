@@ -1,0 +1,151 @@
+.content-section {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 90%;
+        background-image: url(../images/gradiaent-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.hero {
+    padding-top: 40px;
+    height: 100dvh;
+    overflow: hidden;
+
+    @include media ("<tablet") {
+        min-height: 600px;
+        height: auto;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    &_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        height: 100%;
+    }
+
+    &_title {
+        @include adaptive-value("font-size", 120, 52, 1);
+        color: transparent;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 70.45%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 700;
+        line-height: 105%;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: -5.88px;
+    }
+
+    &_subtitle {
+        @include adaptive-value("font-size", 48, 24, 1);
+        color: transparent;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 70.45%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 500;
+        line-height: 100%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &_image {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+        z-index: -2;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.broken {
+    @include adaptive-value("padding-top", 113, 60, 1);
+    @include adaptive-value("padding-bottom", 113, 60, 1);
+
+
+    &_title {
+        letter-spacing: -1.4px;
+        @include adaptive-value("margin-bottom", 48, 32, 1);
+
+        strong {
+            color: transparent;
+            background: linear-gradient(180deg, #FF723A 0%, #B52F02 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    }
+
+    &_image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+        z-index: -2;
+
+        @include media ("<tablet") {
+            height: 80%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        max-width: 560px;
+        width: 100%;
+    }
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        &-title {
+            font-weight: 700;
+            @include adaptive-value("font-size", 32, 24, 1);
+            line-height: 150%;
+            text-transform: uppercase;
+            color: $white;
+        }
+
+        &-description {
+            font-family: Overused Grotesk;
+            color: rgba($color: $white, $alpha: 0.8);
+            font-weight: 500;
+            line-height: 150%;
+            @include adaptive-value("font-size", 21, 16, 1);
+        }
+    }
+}
