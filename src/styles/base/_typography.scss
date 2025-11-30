@@ -31,7 +31,13 @@ h2,
 
 h3,
 .h3 {
-    font-size: $h3-font-size;
+    @include adaptive-value("font-size", 48, 32, 1);
+    letter-spacing: -1px;
+    line-height: 105%;
+
+    @include media ("<phone") {
+        letter-spacing: -1.4px;
+    }
 }
 
 h4,
@@ -50,6 +56,10 @@ h6,
 }
 
 p {
+    color: rgba($color: $white, $alpha: 0.8);
+    font-weight: 500;
+    line-height: 150%;
+    @include adaptive-value("font-size", 21, 16, 1);
     margin: 0;
 }
 
