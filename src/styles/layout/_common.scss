@@ -16,6 +16,26 @@
     }
 }
 
+.title-section {
+    height: 100dvh;
+    @include adaptive-value("padding-top", 80, 60, 1);
+    @include adaptive-value("padding-bottom", 80, 60, 1);
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .title {
+        @include adaptive-value("font-size", 80, 40, 1);
+        max-width: 1000px;
+        width: 100%;
+    }
+}
+
 .section_label {
     display: inline-block;
     color: transparent;
@@ -30,10 +50,143 @@
     letter-spacing: -0.03em;
 }
 
+.nav-bar {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    width: max-content;
+    height: max-content;
+    background: #9420070D;
+    z-index: 1100;
+    padding: 10px;
+    border-radius: 32px;
+    width: 200px;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+
+    @include media ("<tablet") {
+        padding-left: 15px;
+        left: 0;
+        border-radius: 0 25px 25px 0;
+        width: max-content;
+    }
+
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-20px);
+        pointer-events: none;
+
+        @include media ("<tablet") {
+            transform: translateX(-100%);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 32px;
+        box-shadow: 4px 6px 1.5px -5px #FFFFFF80 inset;
+        z-index: -1;
+
+
+        @include media ("<tablet") {
+            border-radius: 0 25px 25px 0;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 32px;
+        box-shadow: -3px -5px 1.5px -5px #FFFFFF80 inset;
+        z-index: -1;
+
+
+        @include media ("<tablet") {
+
+            border-radius: 0 25px 25px 0;
+        }
+    }
+
+    &_list {
+        padding: 0;
+        margin: 0;
+    }
+
+    &_item {
+        @include adaptive-value("font-size", 14, 10, 1);
+        @include adaptive-value("padding-top", 14, 5, 1);
+        @include adaptive-value("padding-bottom", 14, 5, 1);
+        @include adaptive-value("padding-right", 18, 8, 1);
+        @include adaptive-value("padding-left", 18, 8, 1);
+        border-radius: 32px;
+        list-style: none;
+        transition: all 0.3s ease;
+
+        @include media ("<tablet") {
+            padding-left: 0;
+        }
+
+        &.active {
+            padding-left: 8px;
+            background: #9420070D;
+            box-shadow: 0px 0px 10px 0px #A1050066 inset;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &_link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #E5DFD9;
+        border-radius: 32px;
+        padding: 4px 8px;
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: 2px solid $orange;
+            outline-offset: 2px;
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $orange;
+            outline-offset: 2px;
+        }
+
+        &-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
 .hero {
     padding-top: 40px;
     height: 100dvh;
     overflow: hidden;
+
+
+    &:hover {
+        color: $orange;
+        transition: color 0.3s ease;
+    }
 
     @include media ("<tablet") {
         min-height: 600px;
@@ -225,7 +378,7 @@
             @include adaptive-value("height", 120, 70, 1);
         }
 
-        strong{
+        strong {
             @include adaptive-value("font-size", 48, 24, 1);
             line-height: 110%;
             letter-spacing: -0.02em;
@@ -234,9 +387,404 @@
             font-family: Integral CF;
         }
 
-        p{
+        p {
             @include adaptive-value("font-size", 20, 12, 1);
             font-weight: 500;
+        }
+    }
+}
+
+.market {
+    @include adaptive-value("padding-top", 80, 60, 1);
+    @include adaptive-value("padding-bottom", 80, 60, 1);
+
+    @include media ("<desktop") {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .container {
+        @include media ("<desktop") {
+            display: contents;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+
+        @include media ("<desktop") {
+            display: contents;
+        }
+    }
+
+    &_text {
+        max-width: 740px;
+        width: 100%;
+
+        @include media ("<desktop") {
+            order: 1;
+            padding: 0 16px;
+        }
+    }
+
+    .section_label {
+        @include adaptive-value("margin-bottom", 40, 24, 1);
+    }
+
+    &_title {
+        @include adaptive-value("margin-bottom", 32, 16, 1);
+    }
+
+    &_description {
+        max-width: 500px;
+        width: 100%;
+        @include adaptive-value("font-size", 21, 15, 1);
+
+        @include media ("<tablet") {
+            letter-spacing: -0.02em;
+        }
+    }
+
+    &_links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include media ("<desktop") {
+            order: 3;
+            padding: 0 16px;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        span {
+            font-weight: 500;
+            @include adaptive-value("font-size", 20, 12, 1);
+            line-height: 110%;
+            color: rgba($color: $white, $alpha: 0.6);
+            letter-spacing: -0.03em;
+        }
+
+        a {
+            color: rgba($color: $white, $alpha: 0.6);
+            @include adaptive-value("font-size", 24, 12, 1);
+            line-height: 120%;
+            text-decoration: underline;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-radius: 4px;
+            padding: 2px 4px;
+            transition: all 0.3s ease;
+
+            @include media ("<tablet") {
+                gap: 4px
+            }
+
+            &:hover {
+                color: rgba($color: $white, $alpha: 0.9);
+            }
+
+            &:focus {
+                outline: 2px solid $orange;
+                outline-offset: 2px;
+            }
+
+            &:focus:not(:focus-visible) {
+                outline: none;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $orange;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    &_link {
+        &-icon {
+            @include adaptive-value("width", 32, 12, 1);
+            @include adaptive-value("height", 32, 12, 1);
+        }
+    }
+
+    &_image {
+        display: block;
+        margin-top: -150px;
+
+        @include media ("<desktop") {
+            order: 2;
+            margin-top: 0;
+            padding: 0 16px;
+        }
+    }
+}
+
+.audience {
+    @include adaptive-value("padding-top", 80, 60, 1);
+
+    &_inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    &_text {
+        max-width: 740px;
+        width: 100%;
+    }
+
+    .section_label {
+        @include adaptive-value("margin-bottom", 40, 24, 1);
+    }
+
+    &_title {
+        @include adaptive-value("margin-bottom", 32, 16, 1);
+    }
+
+    &_description {
+        max-width: 620px;
+        width: 100%;
+        @include adaptive-value("font-size", 21, 15, 1);
+
+        @include media ("<tablet") {
+            letter-spacing: -0.02em;
+        }
+    }
+
+    &_links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include media ("<desktop") {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        span {
+            font-weight: 500;
+            @include adaptive-value("font-size", 20, 12, 1);
+            line-height: 110%;
+            color: rgba($color: $white, $alpha: 0.6);
+            letter-spacing: -0.03em;
+        }
+
+        a {
+            color: rgba($color: $white, $alpha: 0.6);
+            @include adaptive-value("font-size", 24, 12, 1);
+            line-height: 120%;
+            text-decoration: underline;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-radius: 4px;
+            padding: 2px 4px;
+            transition: all 0.3s ease;
+
+            @include media ("<tablet") {
+                gap: 4px
+            }
+
+            &:hover {
+                color: rgba($color: $white, $alpha: 0.9);
+            }
+
+            &:focus {
+                outline: 2px solid $orange;
+                outline-offset: 2px;
+            }
+
+            &:focus:not(:focus-visible) {
+                outline: none;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $orange;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    &_link {
+        &-icon {
+            @include adaptive-value("width", 32, 12, 1);
+            @include adaptive-value("height", 32, 12, 1);
+        }
+    }
+
+    &_image {
+        display: block;
+        @include adaptive-value(" margin-top", -300, -160, 1);
+        position: relative;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.info-section {
+    @include adaptive-value("padding-top", 80, 60, 1);
+    @include adaptive-value("padding-bottom", 80, 60, 1);
+    height: 100dvh;
+
+    @include media ("<tablet") {
+        padding-top: 110px;
+        height: auto;
+    }
+
+    &#updates,
+    &#howie {
+        .info-section_image {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            transform: translateY(0);
+        }
+    }
+
+    &#howie {
+        .info-section_image {
+            max-width: 920px;
+        }
+    }
+
+    &#data-engine {
+        @include media ("<desktop") {
+            padding-top: 110px;
+            height: auto;
+        }
+    }
+
+    &_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+    }
+
+    &_images-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media ("<desktop") {
+            position: static;
+            margin-bottom: 24px;
+        }
+    }
+
+    &_image-item {
+        background: #9420070D;
+        border-radius: 23px;
+        border: 1px solid #FFA040;
+        height: 150px;
+        min-width: 270px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 24.46px 0px #F2F2F233 inset;
+        backdrop-filter: blur(10px);
+
+        @include media ("<tablet") {
+            min-width: 84px;
+            height: auto;
+            width: 84px;
+            padding: 14px 2px;
+            border-radius: 7.4px;
+        }
+    }
+
+    &_image-subtract {
+        margin: 0 -40px;
+        width: 40%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &_image-iphone {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+
+        @include media ("<tablet") {
+            max-width: 165px;
+        }
+    }
+
+    &_image {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 40px;
+        max-width: 1015px;
+        width: 100%;
+        height: auto;
+
+        @include media ("<tablet") {
+            right: 0;
+            transform: translateY(0);
+            display: block;
+            position: static;
+            margin-bottom: 24px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        @include adaptive-value("gap", 32, 16, 1);
+        height: 100%;
+        max-width: 620px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    &_image-card {
+        position: absolute;
+        bottom: 7%;
+        right: 5%;
+        width: 307px;
+        height: 220px;
+        z-index: 1;
+
+        @include media ("<desktop") {
+            display: none;
         }
     }
 }
