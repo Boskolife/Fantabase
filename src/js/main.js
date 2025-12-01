@@ -155,7 +155,74 @@ function initNavBar() {
   });
 }
 
+function initDifferentiatorsSwiper() {
+  const swiperContainer = document.querySelector('.differentiators_swiper');
+  if (!swiperContainer) return;
+
+  let swiperInstance = null;
+  const breakpoint = 1024;
+
+  const initSwiper = () => {
+    if (window.innerWidth < breakpoint) {
+      if (!swiperInstance && window.Swiper) {
+        swiperInstance = new window.Swiper('.differentiators_swiper', {
+          slidesPerView: 1.2,
+          spaceBetween: 24,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1.3,
+              spaceBetween: 16,
+            },
+            480: {
+              slidesPerView: 1.5,
+              spaceBetween: 16,
+            },
+            650: {
+              slidesPerView: 1.9,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 16,
+            },
+            950: {
+              slidesPerView: 2.6,
+              spaceBetween: 16,
+            },
+          },
+        });
+      }
+    } else {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+    }
+  };
+
+  // Инициализация при загрузке
+  initSwiper();
+
+  // Обработка изменения размера окна
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      initSwiper();
+    }, 250);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
   initNavBar();
+  initDifferentiatorsSwiper();
+});
+
+window.addEventListener('resize', () => {
+  initDifferentiatorsSwiper();
 });

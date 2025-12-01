@@ -10,7 +10,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
   <link rel="manifest" href="./favicon/site.webmanifest">
   <link rel="stylesheet" href="/styles/main.scss">
-  <script type="module" src="/js/main.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script type="module" src="/js/main.js" defer></script>
 </head>
 
 <body>
@@ -148,8 +150,8 @@
         <img src="./images/info-section-img.png"
           alt="Illustration showing Unified, personalized feed">
       </picture>
-      <img src="./images/info-section-img-card.png" alt=""
-        class="info-section_image-card" aria-hidden="true">
+      <img src="./images/info-section-img-card.png" alt="" class="info-section_image-card"
+        aria-hidden="true">
       <div class="container">
         <div class="info-section_inner">
           <h3 class="info-section_title">Unified, personalized feed</h3>
@@ -215,7 +217,8 @@
           <source srcset="./images/subtract-mob.svg" media="(max-width: 768px)">
           <img src="./images/subtract.svg" alt="" aria-hidden="true">
         </picture>
-        <img src="./images/iPhone_16.png" alt="iPhone displaying Fantabase app" class="info-section_image-iphone">
+        <img src="./images/iPhone_16.png" alt="iPhone displaying Fantabase app"
+          class="info-section_image-iphone">
       </div>
       <div class="container">
         <div class="info-section_inner">
@@ -223,6 +226,155 @@
           <p class="info-section_description">Under the hood we use SportsDataIO’s APIs (an
             award-winning sports data provider). This supplies real-time stats, news and analytics
             so our AI and alerts are always up-to-date.</p>
+        </div>
+      </div>
+    </section>
+    <section class="differentiators content-section">
+      <div class="container">
+        <h2 class="differentiators_title">Differentiators</h2>
+      </div>
+      <div class="swiper differentiators_swiper">
+        <div class="swiper-wrapper differentiators_inner">
+          <div class="swiper-slide">
+            <article class="differentiators_item">
+              <span class="differentiators_item-label">News</span>
+              <div class="differentiators_item-image">
+                <img src="./images/differentiators-img-1.png" alt="Unified Player News">
+              </div>
+              <div class="differentiators_item-text">
+                <h4 class="differentiators_item-title">Unified Player News</h4>
+                <p class="differentiators_item-description">Unlike generic stat sheets, Fantabase
+                  delivers everything about your players (injuries, sit/scratch buzz, expert
+                  takes)
+                  in
+                  one feed.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="differentiators_item">
+              <span class="differentiators_item-label">Speed</span>
+              <div class="differentiators_item-image">
+                <img src="./images/differentiators-img-2.png" alt="Unified Player News">
+              </div>
+              <div class="differentiators_item-text">
+                <h4 class="differentiators_item-title">Actionable Intelligence</h4>
+                <p class="differentiators_item-description">
+                  Fantabase cuts 8+ hours of noise into ~15
+                  minutes of focused info. We aggressively filter out 90% of irrelevant content so
+                  you
+                  see only what matters.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="differentiators_item">
+              <span class="differentiators_item-label">data</span>
+              <div class="differentiators_item-image">
+                <img src="./images/differentiators-img-3.png" alt="Unified Player News">
+              </div>
+              <div class="differentiators_item-text">
+                <h4 class="differentiators_item-title">Battle-Tested Data</h4>
+                <p class="differentiators_item-description">Backed by SportsDataIO's enterprise
+                  APIs
+                  ,
+                  ensuring bulletproof accuracy and coverage.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="differentiators_item">
+              <span class="differentiators_item-label">ai manager</span>
+              <div class="differentiators_item-image">
+                <img src="./images/differentiators-img-4.png" alt="Unified Player News">
+              </div>
+              <div class="differentiators_item-text">
+                <h4 class="differentiators_item-title">Interactive AI</h4>
+                <p class="differentiators_item-description">Howie Wynn isn't just static advice –
+                  it's
+                  an AI "manager" that answers personalized lineup/trade queries on demand . This
+                  dynamic approach gives a clear edge over one-size-fits-all tools.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="differentiators_item cover-image">
+              <div class="differentiators_item-image ">
+                <img src="./images/differentiators-img-5.png" alt="Unified Player News">
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="differentiators_item">
+              <span class="differentiators_item-label">News</span>
+              <div class="differentiators_item-image">
+                <img src="./images/differentiators-img-6.png" alt="Unified Player News">
+              </div>
+              <div class="differentiators_item-text">
+                <h4 class="differentiators_item-title">Unified Player News</h4>
+                <p class="differentiators_item-description">Unlike generic stat sheets, Fantabase
+                  delivers everything about your players (injuries, sit/scratch buzz, expert
+                  takes)
+                  in
+                  one feed.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="differentiators_navigation">
+          <div class="swiper-button-prev">
+            <img src="./images/chevron-left.svg" alt="Previous">
+          </div>
+          <div class="swiper-button-next">
+            <img src="./images/chevron-right.svg" alt="Next">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="business-model content-section">
+      <div class="container">
+        <div class="business-model_inner">
+          <h2 class="business-model_title">Business Model</h2>
+          <img src="./images/lines.svg" alt="image not found" class="business-model_lines">
+          <div class="business-model_items">
+            <div class="business-model_item">
+              <div class="business-model_item-head">
+                <h4 class="business-model_item-title">Freemium Pricing</h4>
+                <div class="business-model_item-icon">
+                  <img src="./images/business-icon-1.svg" alt="image not found">
+                </div>
+              </div>
+              <p class="business-model_item-description">Core features (feed, basic alerts, chat)
+                are free. Premium subscription unlocks advanced AI reports, deeper analytics and
+                extra integrations.</p>
+            </div>
+            <div class="business-model_item">
+              <div class="business-model_item-head">
+                <h4 class="business-model_item-title">Founders’ Offer</h4>
+                <div class="business-model_item-icon">
+                  <img src="./images/business-icon-2.svg" alt="image not found">
+                </div>
+              </div>
+              <p class="business-model_item-description">Early adopters on our waitlist lock in 50%
+                off the first year.</p>
+            </div>
+            <div class="business-model_item">
+              <div class="business-model_item-head">
+                <h4 class="business-model_item-title">Scalable Revenue</h4>
+                <div class="business-model_item-icon">
+                  <img src="./images/business-icon-3.svg" alt="image not found">
+                </div>
+              </div>
+              <p class="business-model_item-description">Recurring subscriptions drive predictable
+                revenue. We can later explore partnerships (e.g. advertiser integrations, co-branded
+                content) once we reach scale.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
