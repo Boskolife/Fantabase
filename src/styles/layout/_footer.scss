@@ -1,1 +1,178 @@
-#footer {}
+.footer {
+    padding-top: 52px;
+
+    .top {
+        padding-bottom: 57px;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        @include media('<tablet') {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .logo-wrap {
+        width: 100%;
+        max-width: 372px;
+
+        @include media('<desktop') {
+            max-width: 272px;
+        }
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        gap: 140px;
+
+        @include media('<desktop') {
+            gap: 40px;
+        }
+
+        @include media('<tablet') {
+            flex-direction: column;
+        }
+    }
+
+    .box-title {
+        margin-bottom: 20px;
+        @include adaptive-value("font-size", 18, 14, 1);
+        color: #858585;
+        font-weight: 600;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .socials {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 26px;
+    }
+
+    .socials-link {
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .menu-wrap {
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 250px;
+
+
+
+        &-item {
+            width: 45%;
+        }
+
+        &-link {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+
+    .link {
+        @include adaptive-value("font-size", 16, 14, 1);
+        color: $white;
+        letter-spacing: -0.02em;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .bot {
+        position: relative;
+        padding: 16px 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $white;
+            opacity: 0.2;
+
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+
+        .links-block {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+
+    .bot-text {
+        color: #858585;
+        letter-spacing: -0.02em;
+        font-size: 14px;
+
+        &:last-child {
+            margin: 0 0 0 auto;
+
+            @include media('<tablet') {
+                margin: 0;
+            }
+        }
+    }
+
+    .title {
+        position: relative;
+        margin: 0;
+        line-height: 1;
+        z-index: -1;
+        @include adaptive-value("font-size", 207, 42, 1);
+
+        @include media('<phone') {
+            @include adaptive-value("font-size", 207, 52, 1);
+        }
+    }
+
+    .creator-img {
+        max-width: 218px;
+        width: 100%;
+        height: auto;
+    }
+}

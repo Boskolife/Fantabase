@@ -62,14 +62,3 @@ p {
     @include adaptive-value("font-size", 21, 16, 1);
     margin: 0;
 }
-
-a {
-    color: $base-link-color;
-    text-decoration: none;
-    transition: color .3s ease;
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
-}

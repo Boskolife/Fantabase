@@ -172,6 +172,13 @@ function initDifferentiatorsSwiper() {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
+          a11y: {
+            enabled: true,
+            prevSlideMessage: 'Previous slide',
+            nextSlideMessage: 'Next slide',
+            firstSlideMessage: 'This is the first slide',
+            lastSlideMessage: 'This is the last slide',
+          },
           breakpoints: {
             320: {
               slidesPerView: 1.3,
@@ -217,12 +224,79 @@ function initDifferentiatorsSwiper() {
   });
 }
 
+function initMarketStrategySwiper() {
+  const swiperContainer = document.querySelector('.market-strategy_swiper');
+  if (!swiperContainer) return;
+
+  let swiperInstance = null;
+  const breakpoint = 1024;
+
+  const initSwiper = () => {
+    if (window.innerWidth >= breakpoint) {
+      if (!swiperInstance && window.Swiper) {
+        swiperInstance = new window.Swiper('.market-strategy_swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: 120,
+          pagination: {
+            el: '.swiper-pagination-progressbar',
+            type: 'progressbar',
+          },
+          a11y: {
+            enabled: true,
+            prevSlideMessage: 'Previous slide',
+            nextSlideMessage: 'Next slide',
+            firstSlideMessage: 'This is the first slide',
+            lastSlideMessage: 'This is the last slide',
+          },
+          on: {
+            progress: function(swiper, progress) {
+              const progressBar = document.querySelector('.swiper-pagination-progressbar');
+              if (progressBar) {
+                const percentage = Math.round(progress * 100);
+                progressBar.setAttribute('aria-valuenow', percentage);
+              }
+            },
+          },
+        });
+      }
+    } else {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+    }
+  };
+
+  // Инициализация при загрузке
+  initSwiper();
+
+  // Обработка изменения размера окна
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      initSwiper();
+    }, 250);
+  });
+}
+
+function updateYear() {
+  const year = new Date().getFullYear();
+  const yearElement = document.querySelector('.year');
+  if (yearElement) {
+    yearElement.textContent = year;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  updateYear();
   initBurgerMenu();
   initNavBar();
   initDifferentiatorsSwiper();
+  initMarketStrategySwiper();
 });
 
 window.addEventListener('resize', () => {
   initDifferentiatorsSwiper();
+  initMarketStrategySwiper();
 });

@@ -155,6 +155,7 @@
         border-radius: 32px;
         padding: 4px 8px;
         transition: all 0.3s ease;
+        text-decoration: none;
 
         &:focus {
             outline: 2px solid $orange;
@@ -815,11 +816,15 @@
     }
 
     &_navigation {
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         gap: 16px;
         margin-top: 24px;
+
+        @include media ("<desktop") {
+            display: flex;
+        }
     }
 
     .swiper-button-next,
@@ -1079,6 +1084,248 @@
             font-weight: 500;
             @include adaptive-value("font-size", 24, 16, 1);
             line-height: 150%;
+        }
+    }
+}
+
+.market-strategy {
+    @include adaptive-value("padding-top", 40, 60, 1);
+    @include adaptive-value("padding-bottom", 40, 60, 1);
+    overflow: hidden;
+
+    &:after {
+        bottom: 10%;
+
+        @include media ("<desktop") {
+            bottom: 0;
+        }
+    }
+
+    &_head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        width: 100%;
+        @include adaptive-value("margin-bottom", 196, 32, 1);
+
+        @include media ("<desktop") {
+            margin-bottom: 32px;
+        }
+    }
+
+    &_inner {
+
+        @include media ("<desktop") {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            width: 100%;
+        }
+    }
+
+    &_swiper {
+        overflow: visible !important;
+        max-width: 1372px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 16px !important;
+    }
+
+    .swiper-pagination-progressbar {
+        position: relative !important;
+        max-width: 320px;
+        width: 100% !important;
+        height: 10px !important;
+        border-radius: 24px;
+        background: rgba($color: $white, $alpha: 0.2);
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .swiper-pagination-progressbar-fill {
+        position: absolute;
+        background: $white !important;
+        border-radius: 24px;
+        height: 100%;
+    }
+
+    .swiper-wrapper {
+        counter-reset: num;
+    }
+
+    .swiper-slide {
+        min-height: 100%;
+        height: auto;
+        width: auto !important;
+
+        @include media ("<desktop") {
+            width: 100% !important;
+        }
+
+        &:nth-child(1) {
+            .market-strategy_item-icon {
+                width: 118px;
+                height: 139px;
+
+                @include media ("<desktop") {
+                    width: 68px;
+                    height: 80px;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            .market-strategy_item-icon {
+                width: 120px;
+                height: 84px;
+
+                @include media ("<desktop") {
+                    width: 80px;
+                    height: 56px;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            .market-strategy_item-icon {
+                width: 118px;
+                height: 118px;
+
+                @include media ("<desktop") {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            .market-strategy_item-icon {
+                width: 120px;
+                height: 120px;
+
+                @include media ("<desktop") {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+
+        &:nth-child(5) {
+            .market-strategy_item-icon {
+                width: 120px;
+                height: 120px;
+
+                @include media ("<desktop") {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+        width: 480px;
+        height: 100%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
+        &-icon-wrapper {
+            height: 140px;
+            width: auto;
+            @include adaptive-value("margin-bottom", 32, 16, 1);
+
+            @include media ("<desktop") {
+                height: auto;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 15px;
+            }
+        }
+
+        &-icon {
+            width: 120px;
+            height: 120px;
+
+        }
+
+        &-title {
+            @include adaptive-value("font-size", 40, 24, 1);
+            color: $white;
+            font-weight: 700;
+            line-height: 105%;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            @include adaptive-value("margin-bottom", 24, 12, 1);
+        }
+
+        &-description {
+            color: rgba($color: $white, $alpha: 0.8);
+            font-weight: 500;
+            line-height: 150%;
+            margin-bottom: 48px;
+
+            @include media ("<desktop") {
+                margin-bottom: 0;
+            }
+        }
+
+        &-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px solid #FFA040;
+            box-shadow: 0px 0px 14.46px 0px #A1050066 inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include adaptive-value("font-size", 33, 16, 1);
+            color: $white;
+            font-weight: 700;
+            line-height: 105%;
+            text-transform: uppercase;
+            counter-increment: num;
+            margin-top: auto;
+            background: #010101;
+
+            @include media ("<desktop") {
+                width: 40px;
+                height: 40px;
+                margin: 0;
+            }
+
+            &::before {
+                content: counter(num);
+            }
+
+            &.mobile {
+                display: none;
+
+                @include media ("<desktop") {
+                    display: flex;
+                }
+            }
+
+            &.desktop {
+                display: flex;
+
+                @include media ("<desktop") {
+                    display: none;
+                }
+            }
         }
     }
 }
