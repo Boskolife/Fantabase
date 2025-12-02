@@ -321,12 +321,9 @@
         }
 
         &-description {
-            br{
-                display: none;
-
-                @include media ("<phone") {
-                    display: block;
-                }
+            @include media ("<tablet") {
+                max-width: 345px;
+                width: 100%;
             }
         }
     }
@@ -1495,9 +1492,9 @@
             .team_item-title {
                 line-height: 75%;
 
-                br{
+                br {
                     display: none;
-                    
+
                     @include media ("<phone") {
                         display: block;
                     }
