@@ -528,6 +528,8 @@
     &_image {
         display: block;
         margin-top: -150px;
+        position: relative;
+        z-index: -1;
 
         @include media ("<desktop") {
             order: 2;
