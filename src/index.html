@@ -16,376 +16,328 @@
 </head>
 
 <body>
-  {{> header }}
-  <main id="main-content">
-    <section class="hero content-section">
-      <div class="container">
-        <div class="hero_inner">
-          <h1 class="hero_title">Fantabase™ </h1>
-          <p class="hero_subtitle">Fantasy Football Supercharged by AI</p>
-          <picture class="hero_image">
-            <source srcset="./images/hero-image-mob.png" media="(max-width: 768px)">
-            <img src="./images/hero-image.png"
-              alt="Fantabase AI-powered Fantasy Football platform interface">
-          </picture>
-        </div>
-      </div>
-    </section>
-    <section id="broken" class="broken content-section">
-      <picture class="broken_image">
-        <source srcset="./images/broken-img-mob.png" media="(max-width: 768px)">
-        <img src="./images/broken-img.png"
-          alt="Illustration showing fragmented Fantasy Football experience">
-      </picture>
-      <div class="container">
-        <h2 class="broken_title">Fantasy Football is <strong>Broken</strong></h2>
-        <div class="broken_inner">
-          <article class="broken_item">
-            <h3 class="broken_item-title">Wasted time</h3>
-            <p class="broken_item-description">Managers spend 6–8 hours/week juggling dozens of apps
-              (Twitter, ESPN, YouTube, podcasts, etc.) to track their teams. Users often waste
-              30–120 minutes per day switching apps and searching for relevant info.</p>
-          </article>
-          <article class="broken_item">
-            <h3 class="broken_item-title">Information overload</h3>
-            <p class="broken_item-description">It's a part-time job of sifting through noise.
-              Fantabase cuts the 8 hours of homework and just gives you the fun, relevant insights
-              in a feed you'll actually enjoy.</p>
-          </article>
-          <article class="broken_item">
-            <h3 class="broken_item-title">Fragmented insights</h3>
-            <p class="broken_item-description">No single platform provides a unified view. Players
-              miss opportunities and lose matchups simply because they couldn't find or act on
-              critical news in time.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="base content-section">
-      <picture class="base_image">
-        <source srcset="./images/base-img-mob.png" media="(max-width: 768px)">
-        <img src="./images/base-img.png"
-          alt="Illustration showing massive user base of Fantasy Football">
-      </picture>
-      <div class="container">
-        <div class="base_inner">
-          <span class="section_label">Market Opportunity</span>
-          <h3 class="base_title">Massive user base</h3>
-          <p class="base_description">62.5 million fantasy sports players in North America (80% in
-            the US). Participation is growing, driven by the legalization of sports betting, the
-            dominance of mobile apps, and a new generation of fans who want to interact with the
-            game, not just watch it.</p>
-          <div class="base_item">
-            <img class="base_item-icon" src="./images/base-icon.png"
-              alt="Icon showing massive user base of Fantasy Football">
-            <strong>~62.5 million</strong>
-            <p>fantasy sports players</p>
+  <div id="wrapper">
+    {{> header }}
+    <main id="main-content">
+      <section class="hero content-section">
+        <div class="container">
+          <div class="hero_inner">
+            <h1 class="hero_title">Fantabase™ </h1>
+            <p class="hero_subtitle">Fantasy Football Supercharged by AI</p>
+            <picture class="hero_image">
+              <source srcset="./images/hero-image-mob.png" media="(max-width: 768px)">
+              <img src="./images/hero-image.png"
+                alt="Fantabase AI-powered Fantasy Football platform interface">
+            </picture>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="market" class="market content-section">
-      <div class="container">
-        <div class="market_inner">
-          <div class="market_text">
-            <span class="section_label">Market Opportunity</span>
-            <h3 class="market_title">Large & growing market</h3>
-            <p class="market_description">US fantasy sports market ≈ $10.6 B (+13.1% CAGR). Global
-              fantasy market is larger - $36.7B (+14.1% CAGR).</p>
-          </div>
-          <div class="market_links">
-            <span>source</span>
-            <a href="https://straitsresearch.com/report/fantasy-sports-market" target="_blank"
-              class="market_link" rel="noopener noreferrer">
-              <img src="/images/link.svg" alt="" class="market_link-icon" aria-hidden="true">
-              straitsresearch</a>
-            <a href="https://www.demandsage.com/fantasy-sports-market-size/" target="_blank"
-              class="market_link">
-              <img src="/images/link.svg" alt="" class="market_link-icon" aria-hidden="true">
-              demandsage</a>
+      </section>
+      <section id="broken" class="broken content-section">
+        <picture class="broken_image">
+          <source srcset="./images/broken-img-mob.png" media="(max-width: 768px)">
+          <img src="./images/broken-img.png"
+            alt="Illustration showing fragmented Fantasy Football experience">
+        </picture>
+        <div class="container">
+          <h2 class="broken_title">Fantasy Football is <strong>Broken</strong></h2>
+          <div class="broken_inner">
+            <article class="broken_item">
+              <h3 class="broken_item-title">Wasted time</h3>
+              <p class="broken_item-description">Managers spend 6–8 hours/week juggling dozens of
+                apps
+                (Twitter, ESPN, YouTube, podcasts, etc.) to track their teams. Users often waste
+                30–120 minutes per day switching apps and searching for relevant info.</p>
+            </article>
+            <article class="broken_item">
+              <h3 class="broken_item-title">Information overload</h3>
+              <p class="broken_item-description">It's a part-time job of sifting through noise.
+                Fantabase cuts the 8 hours of homework and just gives you the fun, relevant insights
+                in a feed you'll actually enjoy.</p>
+            </article>
+            <article class="broken_item">
+              <h3 class="broken_item-title">Fragmented insights</h3>
+              <p class="broken_item-description">No single platform provides a unified view. Players
+                miss opportunities and lose matchups simply because they couldn't find or act on
+                critical news in time.</p>
+            </article>
           </div>
         </div>
-        <picture class="market_image">
-          <source srcset="./images/market-img-mob.png" media="(max-width: 1023px)">
-          <img src="./images/market-img.png"
+      </section>
+      <section class="base content-section">
+        <picture class="base_image">
+          <source srcset="./images/base-img-mob.png" media="(max-width: 768px)">
+          <img src="./images/base-img.png"
             alt="Illustration showing massive user base of Fantasy Football">
         </picture>
-      </div>
-    </section>
-    <section class="audience">
-      <div class="container">
-        <div class="audience_inner">
-          <div class="audience_text">
+        <div class="container">
+          <div class="base_inner">
             <span class="section_label">Market Opportunity</span>
-            <h3 class="audience_title">Highly engaged audience:</h3>
-            <p class="audience_description">This is a high-value demographic: 84% have a college
-              degree, and 65% have an HHI over $50k. They are already spending money — over $650 per
-              league on draft parties — and are primed for a tool that saves them their most
-              valuable asset: time.</p>
+            <h3 class="base_title">Massive user base</h3>
+            <p class="base_description">62.5 million fantasy sports players in North America (80% in
+              the US). Participation is growing, driven by the legalization of sports betting, the
+              dominance of mobile apps, and a new generation of fans who want to interact with the
+              game, not just watch it.</p>
+            <div class="base_item">
+              <img class="base_item-icon" src="./images/base-icon.png"
+                alt="Icon showing massive user base of Fantasy Football">
+              <strong>~62.5 million</strong>
+              <p>fantasy sports players</p>
+            </div>
           </div>
-          <div class="audience_links">
-            <span>source</span>
-            <a href="https://thefsga.org/industry-demographics/" target="_blank"
-              class="audience_link" rel="noopener noreferrer">
-              <img src="/images/link.svg" alt="" class="audience_link-icon" aria-hidden="true">
-              FSGA</a>
+        </div>
+      </section>
+      <section id="market" class="market content-section">
+        <div class="container">
+          <div class="market_inner">
+            <div class="market_text">
+              <span class="section_label">Market Opportunity</span>
+              <h3 class="market_title">Large & growing market</h3>
+              <p class="market_description">US fantasy sports market ≈ $10.6 B (+13.1% CAGR). Global
+                fantasy market is larger - $36.7B (+14.1% CAGR).</p>
+            </div>
+            <div class="market_links">
+              <span>source</span>
+              <a href="https://straitsresearch.com/report/fantasy-sports-market" target="_blank"
+                class="market_link" rel="noopener noreferrer">
+                <img src="/images/link.svg" alt="" class="market_link-icon" aria-hidden="true">
+                straitsresearch</a>
+              <a href="https://www.demandsage.com/fantasy-sports-market-size/" target="_blank"
+                class="market_link">
+                <img src="/images/link.svg" alt="" class="market_link-icon" aria-hidden="true">
+                demandsage</a>
+            </div>
+          </div>
+          <picture class="market_image">
+            <source srcset="./images/market-img-mob.png" media="(max-width: 1023px)">
+            <img src="./images/market-img.png"
+              alt="Illustration showing massive user base of Fantasy Football">
+          </picture>
+        </div>
+      </section>
+      <section class="audience">
+        <div class="container">
+          <div class="audience_inner">
+            <div class="audience_text">
+              <span class="section_label">Market Opportunity</span>
+              <h3 class="audience_title">Highly engaged audience:</h3>
+              <p class="audience_description">This is a high-value demographic: 84% have a college
+                degree, and 65% have an HHI over $50k. They are already spending money — over $650
+                per
+                league on draft parties — and are primed for a tool that saves them their most
+                valuable asset: time.</p>
+            </div>
+            <div class="audience_links">
+              <span>source</span>
+              <a href="https://thefsga.org/industry-demographics/" target="_blank"
+                class="audience_link" rel="noopener noreferrer">
+                <img src="/images/link.svg" alt="" class="audience_link-icon" aria-hidden="true">
+                FSGA</a>
+            </div>
           </div>
         </div>
-      </div>
-      <picture class="audience_image">
-        <source srcset="./images/audience-img-mob.png" media="(max-width: 1023px)">
-        <img src="./images/audience-img.png"
-          alt="Illustration showing massive user base of Fantasy Football">
-      </picture>
-    </section>
-    <section id="solution" class="title-section content-section">
-      <div class="container">
-        <h2 class="title">Our Solution: <br>
-          AI-Powered Feed & Assistant</h2>
-      </div>
-    </section>
-    <section class="info-section content-section" id="feed">
-      <picture class="info-section_image">
-        <source srcset="./images/info-section-img-mob.png" media="(max-width: 768px)">
-        <img src="./images/info-section-img.png"
-          alt="Illustration showing Unified, personalized feed">
-      </picture>
-      <img src="./images/info-section-img-card.png" alt="" class="info-section_image-card"
-        aria-hidden="true">
-      <div class="container">
-        <div class="info-section_inner">
-          <h3 class="info-section_title">Unified, personalized feed</h3>
-          <p class="info-section_description">Fantabase syncs with your fantasy leagues (one-click
-            Sleeper integration or manual entry) and automatically builds a curated stream of
-            “actionable intelligence” for the players you actually own. Only relevant news, analysis
-            and data appear in your feed – no fluff.</p>
-        </div>
-      </div>
-    </section>
-    <section class="info-section content-section" id="updates">
-      <picture class="info-section_image">
-        <source srcset="./images/info-section-img-mob-2.png" media="(max-width: 768px)">
-        <img src="./images/info-section-img-2.png"
-          alt="Illustration showing Roster-focused updates">
-      </picture>
-      <div class="container">
-        <div class="info-section_inner">
-          <h3 class="info-section_title">Roster-focused updates</h3>
-          <p class="info-section_description">We aggregate all sources (social media, expert blogs,
-            local beat reporters, YouTube сlips) and filter them down to what impacts your lineup.
-            In effect, “Your feed = your lineup’s pulse” – nothing extra, nothing missed.</p>
-        </div>
-      </div>
-    </section>
-    <section class="info-section content-section" id="watchlist">
-      <picture class="info-section_image">
-        <source srcset="./images/info-section-img-mob-3.png" media="(max-width: 768px)">
-        <img src="./images/info-section-img-3.png" alt="Illustration showing Watchlist">
-      </picture>
-      <div class="container">
-        <div class="info-section_inner">
-          <h3 class="info-section_title">Smart watchlists & real-time alerts</h3>
-          <p class="info-section_description">Add any player (including players you don’t own) to a
-            custom watchlist. When a tracked player has news (e.g. injury, inactive, trade),
-            Fantabase sends a push notification immediately . You’ll know before your league does,
-            giving you first-mover advantage.</p>
-        </div>
-      </div>
-    </section>
-    <section class="info-section content-section" id="howie">
-      <picture class="info-section_image">
-        <source srcset="./images/info-section-img-mob-4.png" media="(max-width: 768px)">
-        <img src="./images/info-section-img-4.png" alt="Illustration showing AI Chat Assistant">
-      </picture>
-      <div class="container">
-        <div class="info-section_inner">
-          <h3 class="info-section_title">AI Chat Assistant (“Howie Wynn”)</h3>
-          <p class="info-section_description">Our assistant handles the endless lineup questions
-            (waiver targets, injury impact, start/sit decisions, trade advice, projections, etc.) in
-            seconds. Howie Wynn has been “trained” on a massive library of fantasy analysis –
-            effectively a 24/7 personal scouting team.</p>
-        </div>
-      </div>
-    </section>
-    <section class="info-section content-section" id="data-engine">
-      <img src="./images/info-section-bg.png" alt="" class="info-section_bg" aria-hidden="true">
-      <div class="info-section_images-wrap">
-        <div class="info-section_image-item">
-          <img src="./images/sports-data.png" alt="Sports data visualization">
-        </div>
-        <picture class="info-section_image-subtract">
-          <source srcset="./images/subtract-mob.svg" media="(max-width: 768px)">
-          <img src="./images/subtract.svg" alt="" aria-hidden="true">
+        <picture class="audience_image">
+          <source srcset="./images/audience-img-mob.png" media="(max-width: 1023px)">
+          <img src="./images/audience-img.png"
+            alt="Illustration showing massive user base of Fantasy Football">
         </picture>
-        <img src="./images/iPhone_16.png" alt="iPhone displaying Fantabase app"
-          class="info-section_image-iphone">
-      </div>
-      <div class="container">
-        <div class="info-section_inner">
-          <h3 class="info-section_title">Powerful data engine</h3>
-          <p class="info-section_description">Under the hood we use SportsDataIO’s APIs (an
-            award-winning sports data provider). This supplies real-time stats, news and analytics
-            so our AI and alerts are always up-to-date.</p>
+      </section>
+      <section id="solution" class="title-section content-section">
+        <div class="container">
+          <h2 class="title">Our Solution: <br>
+            AI-Powered Feed & Assistant</h2>
         </div>
-      </div>
-    </section>
-    <section id="differentiators" class="differentiators content-section">
-      <div class="container">
-        <h2 class="differentiators_title">Differentiators</h2>
-      </div>
-      <div class="swiper differentiators_swiper">
-        <div class="swiper-wrapper differentiators_inner">
-          <div class="swiper-slide">
-            <article class="differentiators_item">
-              <span class="differentiators_item-label">News</span>
-              <div class="differentiators_item-image">
-                <img src="./images/differentiators-img-1.png"
-                  alt="Unified Player News illustration">
-              </div>
-              <div class="differentiators_item-text">
-                <h4 class="differentiators_item-title">Unified Player News</h4>
-                <p class="differentiators_item-description">Unlike generic stat sheets, Fantabase
-                  delivers everything about your players (injuries, sit/scratch buzz, expert
-                  takes)
-                  in
-                  one feed.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="differentiators_item">
-              <span class="differentiators_item-label">Speed</span>
-              <div class="differentiators_item-image">
-                <img src="./images/differentiators-img-2.png"
-                  alt="Actionable Intelligence illustration">
-              </div>
-              <div class="differentiators_item-text">
-                <h4 class="differentiators_item-title">Actionable Intelligence</h4>
-                <p class="differentiators_item-description">
-                  Fantabase cuts 8+ hours of noise into ~15
-                  minutes of focused info. We aggressively filter out 90% of irrelevant content so
-                  you
-                  see only what matters.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="differentiators_item">
-              <span class="differentiators_item-label">data</span>
-              <div class="differentiators_item-image">
-                <img src="./images/differentiators-img-3.png" alt="Battle-Tested Data illustration">
-              </div>
-              <div class="differentiators_item-text">
-                <h4 class="differentiators_item-title">Battle-Tested Data</h4>
-                <p class="differentiators_item-description">Backed by SportsDataIO's enterprise
-                  APIs
-                  ,
-                  ensuring bulletproof accuracy and coverage.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="differentiators_item">
-              <span class="differentiators_item-label">ai manager</span>
-              <div class="differentiators_item-image">
-                <img src="./images/differentiators-img-4.png" alt="Interactive AI illustration">
-              </div>
-              <div class="differentiators_item-text">
-                <h4 class="differentiators_item-title">Interactive AI</h4>
-                <p class="differentiators_item-description">Howie Wynn isn't just static advice –
-                  it's
-                  an AI "manager" that answers personalized lineup/trade queries on demand . This
-                  dynamic approach gives a clear edge over one-size-fits-all tools.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="differentiators_item cover-image">
-              <div class="differentiators_item-image ">
-                <img src="./images/differentiators-img-5.png" alt="" aria-hidden="true">
-              </div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="differentiators_item">
-              <span class="differentiators_item-label">News</span>
-              <div class="differentiators_item-image">
-                <img src="./images/differentiators-img-6.png"
-                  alt="Unified Player News illustration">
-              </div>
-              <div class="differentiators_item-text">
-                <h4 class="differentiators_item-title">Unified Player News</h4>
-                <p class="differentiators_item-description">Unlike generic stat sheets, Fantabase
-                  delivers everything about your players (injuries, sit/scratch buzz, expert
-                  takes)
-                  in
-                  one feed.
-                </p>
-              </div>
-            </article>
+      </section>
+      <section class="info-section content-section" id="feed">
+        <picture class="info-section_image">
+          <source srcset="./images/info-section-img-mob.png" media="(max-width: 768px)">
+          <img src="./images/info-section-img.png"
+            alt="Illustration showing Unified, personalized feed">
+        </picture>
+        <img src="./images/info-section-img-card.png" alt="" class="info-section_image-card"
+          aria-hidden="true">
+        <div class="container">
+          <div class="info-section_inner">
+            <h3 class="info-section_title">Unified, personalized feed</h3>
+            <p class="info-section_description">Fantabase syncs with your fantasy leagues (one-click
+              Sleeper integration or manual entry) and automatically builds a curated stream of
+              “actionable intelligence” for the players you actually own. Only relevant news,
+              analysis
+              and data appear in your feed – no fluff.</p>
           </div>
         </div>
-        <div class="differentiators_navigation">
-          <button class="swiper-button-prev" aria-label="Previous slide">
-            <img src="./images/chevron-left.svg" alt="" aria-hidden="true">
-          </button>
-          <button class="swiper-button-next" aria-label="Next slide">
-            <img src="./images/chevron-right.svg" alt="" aria-hidden="true">
-          </button>
+      </section>
+      <section class="info-section content-section" id="updates">
+        <picture class="info-section_image">
+          <source srcset="./images/info-section-img-mob-2.png" media="(max-width: 768px)">
+          <img src="./images/info-section-img-2.png"
+            alt="Illustration showing Roster-focused updates">
+        </picture>
+        <div class="container">
+          <div class="info-section_inner">
+            <h3 class="info-section_title">Roster-focused updates</h3>
+            <p class="info-section_description">We aggregate all sources (social media, expert
+              blogs,
+              local beat reporters, YouTube сlips) and filter them down to what impacts your lineup.
+              In effect, “Your feed = your lineup’s pulse” – nothing extra, nothing missed.</p>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="business-model" class="business-model content-section">
-      <div class="container">
-        <div class="business-model_inner">
-          <h2 class="business-model_title">Business Model</h2>
-          <img src="./images/lines.svg" alt="" class="business-model_lines" aria-hidden="true">
-          <div class="business-model_items">
-            <div class="business-model_item">
-              <div class="business-model_item-head">
-                <h4 class="business-model_item-title">Freemium Pricing</h4>
-                <div class="business-model_item-icon">
-                  <img src="./images/business-icon-1.svg" alt="" aria-hidden="true">
+      </section>
+      <section class="info-section content-section" id="watchlist">
+        <picture class="info-section_image">
+          <source srcset="./images/info-section-img-mob-3.png" media="(max-width: 768px)">
+          <img src="./images/info-section-img-3.png" alt="Illustration showing Watchlist">
+        </picture>
+        <div class="container">
+          <div class="info-section_inner">
+            <h3 class="info-section_title">Smart watchlists & real-time alerts</h3>
+            <p class="info-section_description">Add any player (including players you don’t own) to
+              a
+              custom watchlist. When a tracked player has news (e.g. injury, inactive, trade),
+              Fantabase sends a push notification immediately . You’ll know before your league does,
+              giving you first-mover advantage.</p>
+          </div>
+        </div>
+      </section>
+      <section class="info-section content-section" id="howie">
+        <picture class="info-section_image">
+          <source srcset="./images/info-section-img-mob-4.png" media="(max-width: 768px)">
+          <img src="./images/info-section-img-4.png" alt="Illustration showing AI Chat Assistant">
+        </picture>
+        <div class="container">
+          <div class="info-section_inner">
+            <h3 class="info-section_title">AI Chat Assistant (“Howie Wynn”)</h3>
+            <p class="info-section_description">Our assistant handles the endless lineup questions
+              (waiver targets, injury impact, start/sit decisions, trade advice, projections, etc.)
+              in
+              seconds. Howie Wynn has been “trained” on a massive library of fantasy analysis –
+              effectively a 24/7 personal scouting team.</p>
+          </div>
+        </div>
+      </section>
+      <section class="info-section content-section" id="data-engine">
+        <img src="./images/info-section-bg.png" alt="" class="info-section_bg" aria-hidden="true">
+        <div class="info-section_images-wrap">
+          <div class="info-section_image-item">
+            <img src="./images/sports-data.png" alt="Sports data visualization">
+          </div>
+          <picture class="info-section_image-subtract">
+            <source srcset="./images/subtract-mob.svg" media="(max-width: 768px)">
+            <img src="./images/subtract.svg" alt="" aria-hidden="true">
+          </picture>
+          <img src="./images/iPhone_16.png" alt="iPhone displaying Fantabase app"
+            class="info-section_image-iphone">
+        </div>
+        <div class="container">
+          <div class="info-section_inner">
+            <h3 class="info-section_title">Powerful data engine</h3>
+            <p class="info-section_description">Under the hood we use SportsDataIO’s APIs (an
+              award-winning sports data provider). This supplies real-time stats, news and analytics
+              so our AI and alerts are always up-to-date.</p>
+          </div>
+        </div>
+      </section>
+      <section id="differentiators" class="differentiators content-section">
+        <div class="container">
+          <h2 class="differentiators_title">Differentiators</h2>
+        </div>
+        <div class="swiper differentiators_swiper">
+          <div class="swiper-wrapper differentiators_inner">
+            <div class="swiper-slide">
+              <article class="differentiators_item">
+                <span class="differentiators_item-label">News</span>
+                <div class="differentiators_item-image">
+                  <img src="./images/differentiators-img-1.png"
+                    alt="Unified Player News illustration">
                 </div>
-              </div>
-              <p class="business-model_item-description">Core features (feed, basic alerts, chat)
-                are free. Premium subscription unlocks advanced AI reports, deeper analytics and
-                extra integrations.</p>
-            </div>
-            <div class="business-model_item">
-              <div class="business-model_item-head">
-                <h4 class="business-model_item-title">Founders’ Offer</h4>
-                <div class="business-model_item-icon">
-                  <img src="./images/business-icon-2.svg" alt="" aria-hidden="true">
+                <div class="differentiators_item-text">
+                  <h4 class="differentiators_item-title">Unified Player News</h4>
+                  <p class="differentiators_item-description">Unlike generic stat sheets, Fantabase
+                    delivers everything about your players (injuries, sit/scratch buzz, expert
+                    takes)
+                    in
+                    one feed.
+                  </p>
                 </div>
-              </div>
-              <p class="business-model_item-description">Early adopters on our waitlist lock in 50%
-                off the first year.</p>
+              </article>
             </div>
-            <div class="business-model_item">
-              <div class="business-model_item-head">
-                <h4 class="business-model_item-title">Scalable Revenue</h4>
-                <div class="business-model_item-icon">
-                  <img src="./images/business-icon-3.svg" alt="" aria-hidden="true">
+            <div class="swiper-slide">
+              <article class="differentiators_item">
+                <span class="differentiators_item-label">Speed</span>
+                <div class="differentiators_item-image">
+                  <img src="./images/differentiators-img-2.png"
+                    alt="Actionable Intelligence illustration">
                 </div>
-              </div>
-              <p class="business-model_item-description">Recurring subscriptions drive predictable
-                revenue. We can later explore partnerships (e.g. advertiser integrations, co-branded
-                content) once we reach scale.</p>
+                <div class="differentiators_item-text">
+                  <h4 class="differentiators_item-title">Actionable Intelligence</h4>
+                  <p class="differentiators_item-description">
+                    Fantabase cuts 8+ hours of noise into ~15
+                    minutes of focused info. We aggressively filter out 90% of irrelevant content so
+                    you
+                    see only what matters.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="differentiators_item">
+                <span class="differentiators_item-label">data</span>
+                <div class="differentiators_item-image">
+                  <img src="./images/differentiators-img-3.png"
+                    alt="Battle-Tested Data illustration">
+                </div>
+                <div class="differentiators_item-text">
+                  <h4 class="differentiators_item-title">Battle-Tested Data</h4>
+                  <p class="differentiators_item-description">Backed by SportsDataIO's enterprise
+                    APIs
+                    ,
+                    ensuring bulletproof accuracy and coverage.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="differentiators_item">
+                <span class="differentiators_item-label">ai manager</span>
+                <div class="differentiators_item-image">
+                  <img src="./images/differentiators-img-4.png" alt="Interactive AI illustration">
+                </div>
+                <div class="differentiators_item-text">
+                  <h4 class="differentiators_item-title">Interactive AI</h4>
+                  <p class="differentiators_item-description">Howie Wynn isn't just static advice –
+                    it's
+                    an AI "manager" that answers personalized lineup/trade queries on demand . This
+                    dynamic approach gives a clear edge over one-size-fits-all tools.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="differentiators_item cover-image">
+                <div class="differentiators_item-image ">
+                  <img src="./images/differentiators-img-5.png" alt="" aria-hidden="true">
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="differentiators_item">
+                <span class="differentiators_item-label">News</span>
+                <div class="differentiators_item-image">
+                  <img src="./images/differentiators-img-6.png"
+                    alt="Unified Player News illustration">
+                </div>
+                <div class="differentiators_item-text">
+                  <h4 class="differentiators_item-title">Unified Player News</h4>
+                  <p class="differentiators_item-description">Unlike generic stat sheets, Fantabase
+                    delivers everything about your players (injuries, sit/scratch buzz, expert
+                    takes)
+                    in
+                    one feed.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="market-strategy content-section">
-      <div class="container">
-        <div class="market-strategy_head">
-          <span class="section_label">Go-To-Market Strategy</span>
-          <div class="market-strategy_navigation">
+          <div class="differentiators_navigation">
             <button class="swiper-button-prev" aria-label="Previous slide">
               <img src="./images/chevron-left.svg" alt="" aria-hidden="true">
             </button>
@@ -394,133 +346,193 @@
             </button>
           </div>
         </div>
-      </div>
-      <div class="swiper market-strategy_swiper">
-        <div class="swiper-wrapper market-strategy_inner">
-          <div class="swiper-slide">
-            <article class="market-strategy_item">
-              <div class="market-strategy_item-icon-wrapper">
-                <img class="market-strategy_item-icon" src="./images/strategy-icon-1.png"
-                  alt="Sleeper Beachhead strategy icon">
-                <div class="market-strategy_item-number mobile"></div>
+      </section>
+      <section id="business-model" class="business-model content-section">
+        <div class="container">
+          <div class="business-model_inner">
+            <h2 class="business-model_title">Business Model</h2>
+            <img src="./images/lines.svg" alt="" class="business-model_lines" aria-hidden="true">
+            <div class="business-model_items">
+              <div class="business-model_item">
+                <div class="business-model_item-head">
+                  <h4 class="business-model_item-title">Freemium Pricing</h4>
+                  <div class="business-model_item-icon">
+                    <img src="./images/business-icon-1.svg" alt="" aria-hidden="true">
+                  </div>
+                </div>
+                <p class="business-model_item-description">Core features (feed, basic alerts, chat)
+                  are free. Premium subscription unlocks advanced AI reports, deeper analytics and
+                  extra integrations.</p>
               </div>
-              <h4 class="market-strategy_item-title">Sleeper Beachhead</h4>
-              <p class="market-strategy_item-description">We launch exclusively to Sleeper users
-                first – over 5 million active users as of and the fastest-growing fantasy
-                platform. These engaged power-users will be our early evangelists.</p>
-              <div class="market-strategy_item-number desktop"></div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="market-strategy_item">
-              <div class="market-strategy_item-icon-wrapper">
-                <img class="market-strategy_item-icon" src="./images/strategy-icon-2.png"
-                  alt="Viral Pre-Launch strategy icon">
-                <div class="market-strategy_item-number mobile"></div>
+              <div class="business-model_item">
+                <div class="business-model_item-head">
+                  <h4 class="business-model_item-title">Founders’ Offer</h4>
+                  <div class="business-model_item-icon">
+                    <img src="./images/business-icon-2.svg" alt="" aria-hidden="true">
+                  </div>
+                </div>
+                <p class="business-model_item-description">Early adopters on our waitlist lock in
+                  50%
+                  off the first year.</p>
               </div>
-              <h4 class="market-strategy_item-title">Viral Pre-Launch</h4>
-              <p class="market-strategy_item-description">Launching a viral YouTube content series
-                showcasing Howie's capabilities and providing weekly fantasy advice.</p>
-              <div class="market-strategy_item-number desktop"></div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="market-strategy_item">
-              <div class="market-strategy_item-icon-wrapper">
-                <img class="market-strategy_item-icon" src="./images/strategy-icon-3.png"
-                  alt="Launch Campaign strategy icon">
-                <div class="market-strategy_item-number mobile"></div>
+              <div class="business-model_item">
+                <div class="business-model_item-head">
+                  <h4 class="business-model_item-title">Scalable Revenue</h4>
+                  <div class="business-model_item-icon">
+                    <img src="./images/business-icon-3.svg" alt="" aria-hidden="true">
+                  </div>
+                </div>
+                <p class="business-model_item-description">Recurring subscriptions drive predictable
+                  revenue. We can later explore partnerships (e.g. advertiser integrations,
+                  co-branded
+                  content) once we reach scale.</p>
               </div>
-              <h4 class="market-strategy_item-title">Launch Campaign</h4>
-              <p class="market-strategy_item-description">Coordinate Product Hunt launch, social
-                pushes and community events to maximize Day 1 signups.</p>
-              <div class="market-strategy_item-number desktop"></div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="market-strategy_item">
-              <div class="market-strategy_item-icon-wrapper">
-                <img class="market-strategy_item-icon" src="./images/strategy-icon-4.png"
-                  alt="Community Engagement strategy icon">
-                <div class="market-strategy_item-number mobile"></div>
-              </div>
-              <h4 class="market-strategy_item-title">Community Engagement</h4>
-              <p class="market-strategy_item-description">After launch, convert power users into a
-                “Founders Circle” on Discord for feedback and advocacy. Implement an in-app
-                referral program to fuel organic growth.</p>
-              <div class="market-strategy_item-number desktop"></div>
-            </article>
-          </div>
-          <div class="swiper-slide">
-            <article class="market-strategy_item">
-              <div class="market-strategy_item-icon-wrapper">
-                <img class="market-strategy_item-icon" src="./images/strategy-icon-5.png"
-                  alt="Platform Expansion strategy icon">
-                <div class="market-strategy_item-number mobile"></div>
-              </div>
-              <h4 class="market-strategy_item-title">Platform Expansion</h4>
-              <p class="market-strategy_item-description">Expanding to support Yahoo & ESPN
-                leagues,
-                plus new sports (NBA, MLB, NHL). Each new platform/sport introduction is
-                accompanied by targeted PR/marketing.</p>
-              <div class="market-strategy_item-number desktop"></div>
-            </article>
+            </div>
           </div>
         </div>
+      </section>
+      <section class="market-strategy content-section">
+        <div class="container">
+          <div class="market-strategy_head">
+            <span class="section_label">Go-To-Market Strategy</span>
+            <div class="market-strategy_navigation">
+              <button class="swiper-button-prev" aria-label="Previous slide">
+                <img src="./images/chevron-left.svg" alt="" aria-hidden="true">
+              </button>
+              <button class="swiper-button-next" aria-label="Next slide">
+                <img src="./images/chevron-right.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper market-strategy_swiper">
+          <div class="swiper-wrapper market-strategy_inner">
+            <div class="swiper-slide">
+              <article class="market-strategy_item">
+                <div class="market-strategy_item-icon-wrapper">
+                  <img class="market-strategy_item-icon" src="./images/strategy-icon-1.png"
+                    alt="Sleeper Beachhead strategy icon">
+                  <div class="market-strategy_item-number mobile"></div>
+                </div>
+                <h4 class="market-strategy_item-title">Sleeper Beachhead</h4>
+                <p class="market-strategy_item-description">We launch exclusively to Sleeper users
+                  first – over 5 million active users as of and the fastest-growing fantasy
+                  platform. These engaged power-users will be our early evangelists.</p>
+                <div class="market-strategy_item-number desktop"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="market-strategy_item">
+                <div class="market-strategy_item-icon-wrapper">
+                  <img class="market-strategy_item-icon" src="./images/strategy-icon-2.png"
+                    alt="Viral Pre-Launch strategy icon">
+                  <div class="market-strategy_item-number mobile"></div>
+                </div>
+                <h4 class="market-strategy_item-title">Viral Pre-Launch</h4>
+                <p class="market-strategy_item-description">Launching a viral YouTube content series
+                  showcasing Howie's capabilities and providing weekly fantasy advice.</p>
+                <div class="market-strategy_item-number desktop"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="market-strategy_item">
+                <div class="market-strategy_item-icon-wrapper">
+                  <img class="market-strategy_item-icon" src="./images/strategy-icon-3.png"
+                    alt="Launch Campaign strategy icon">
+                  <div class="market-strategy_item-number mobile"></div>
+                </div>
+                <h4 class="market-strategy_item-title">Launch Campaign</h4>
+                <p class="market-strategy_item-description">Coordinate Product Hunt launch, social
+                  pushes and community events to maximize Day 1 signups.</p>
+                <div class="market-strategy_item-number desktop"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="market-strategy_item">
+                <div class="market-strategy_item-icon-wrapper">
+                  <img class="market-strategy_item-icon" src="./images/strategy-icon-4.png"
+                    alt="Community Engagement strategy icon">
+                  <div class="market-strategy_item-number mobile"></div>
+                </div>
+                <h4 class="market-strategy_item-title">Community Engagement</h4>
+                <p class="market-strategy_item-description">After launch, convert power users into a
+                  “Founders Circle” on Discord for feedback and advocacy. Implement an in-app
+                  referral program to fuel organic growth.</p>
+                <div class="market-strategy_item-number desktop"></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="market-strategy_item">
+                <div class="market-strategy_item-icon-wrapper">
+                  <img class="market-strategy_item-icon" src="./images/strategy-icon-5.png"
+                    alt="Platform Expansion strategy icon">
+                  <div class="market-strategy_item-number mobile"></div>
+                </div>
+                <h4 class="market-strategy_item-title">Platform Expansion</h4>
+                <p class="market-strategy_item-description">Expanding to support Yahoo & ESPN
+                  leagues,
+                  plus new sports (NBA, MLB, NHL). Each new platform/sport introduction is
+                  accompanied by targeted PR/marketing.</p>
+                <div class="market-strategy_item-number desktop"></div>
+              </article>
+            </div>
+          </div>
 
-      </div>
-    </section>
-    <section class="team content-section">
-      <div class="mob-gradient">
-        <img src="./images/gradient-bg-4.png" alt="image not found">
-      </div>
-      <div class="container">
-        <h2 class="team_title">Team</h2>
-        <div class="team_items">
-          <article class="team_item">
-            <div class="team_item-image">
-              <img src="./images/team-1.png" alt="Team member 1">
-            </div>
-            <h3 class="team_item-title">Mat Dupuis</h3>
-            <h5 class="team_item-subtitle">Founder & CEO</h5>
-            <p class="team_item-description">Multi-league fantasy veteran and strategist. Deep
-              understanding of manager pain-points and product vision.</p>
-          </article>
-          <article class="team_item">
-            <div class="team_item-image">
-              <img src="./images/team-2.png" alt="Team member 2">
-            </div>
-            <h3 class="team_item-title">Anton Zalis <span class="small">and</span> <span
-                class="middle">Improvs.com</span></h3>
-            <h5 class="team_item-subtitle">Lead Developers</h5>
-            <p class="team_item-description">Award-winning AI and full-stack engineers. Architects
-              of Fantabase’s tech (data pipelines, AI models, web/mobile).</p>
-          </article>
         </div>
-        <p class="team_description">Additional advisors and part-time sports analysts contribute as
-          needed.</p>
-      </div>
-    </section>
-    <section class="contact content-section">
-      <div class="contact_bg">
-        <img src="./images/contact-bg.png" alt="image not found">
-      </div>
-      <div class="container">
-        <h2 class="contact_title">Let's Build</h2>
-        <p class="contact_description">We are currently connecting with strategic partners and
-          investors. For investment opportunities, please get in touch.</p>
-        <form action="" class="contact_form">
-          <label for="email" area-hidden="true">Name</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email">
-          <label for="message" area-hidden="true">Email</label>
-          <textarea name="message" id="message" placeholder="Enter your message"></textarea>
-          <button type="submit" class="contact_form-button">Submit</button>
-        </form>
-      </div>
-    </section>
-  </main>
-  {{> nav-bar }}
-  {{> footer }}
+      </section>
+      <section class="team content-section">
+        <div class="mob-gradient">
+          <img src="./images/gradient-bg-4.png" alt="image not found">
+        </div>
+        <div class="container">
+          <h2 class="team_title">Team</h2>
+          <div class="team_items">
+            <article class="team_item">
+              <div class="team_item-image">
+                <img src="./images/team-1.png" alt="Team member 1">
+              </div>
+              <h3 class="team_item-title">Mat Dupuis</h3>
+              <h5 class="team_item-subtitle">Founder & CEO</h5>
+              <p class="team_item-description">Multi-league fantasy veteran and strategist. Deep
+                understanding of manager pain-points and product vision.</p>
+            </article>
+            <article class="team_item">
+              <div class="team_item-image">
+                <img src="./images/team-2.png" alt="Team member 2">
+              </div>
+              <h3 class="team_item-title">Anton Zalis <span class="small">and</span> <span
+                  class="middle">Improvs.com</span></h3>
+              <h5 class="team_item-subtitle">Lead Developers</h5>
+              <p class="team_item-description">Award-winning AI and full-stack engineers. Architects
+                of Fantabase’s tech (data pipelines, AI models, web/mobile).</p>
+            </article>
+          </div>
+          <p class="team_description">Additional advisors and part-time sports analysts contribute
+            as
+            needed.</p>
+        </div>
+      </section>
+      <section class="contact content-section">
+        <div class="contact_bg">
+          <img src="./images/contact-bg.png" alt="image not found">
+        </div>
+        <div class="container">
+          <h2 class="contact_title">Let's Build</h2>
+          <p class="contact_description">We are currently connecting with strategic partners and
+            investors. For investment opportunities, please get in touch.</p>
+          <form action="" class="contact_form">
+            <label for="email" area-hidden="true">Name</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <label for="message" area-hidden="true">Email</label>
+            <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+            <button type="submit" class="contact_form-button">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    {{> nav-bar }}
+    {{> footer }}
+  </div>
 </body>
 
 </html>
