@@ -138,6 +138,7 @@ body.menu-open {
             font-size: 14px;
             line-height: 120%;
             transition: color 0.3s ease;
+            text-decoration: none;
             border-radius: 8px;
 
             @include media ("<desktop") {

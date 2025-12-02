@@ -237,9 +237,9 @@ function initMarketStrategySwiper() {
         swiperInstance = new window.Swiper('.market-strategy_swiper', {
           slidesPerView: 'auto',
           spaceBetween: 120,
-          pagination: {
-            el: '.swiper-pagination-progressbar',
-            type: 'progressbar',
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
           },
           a11y: {
             enabled: true,
@@ -249,8 +249,10 @@ function initMarketStrategySwiper() {
             lastSlideMessage: 'This is the last slide',
           },
           on: {
-            progress: function(swiper, progress) {
-              const progressBar = document.querySelector('.swiper-pagination-progressbar');
+            progress: function (swiper, progress) {
+              const progressBar = document.querySelector(
+                '.swiper-pagination-progressbar',
+              );
               if (progressBar) {
                 const percentage = Math.round(progress * 100);
                 progressBar.setAttribute('aria-valuenow', percentage);

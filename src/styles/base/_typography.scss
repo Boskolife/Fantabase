@@ -55,6 +55,10 @@ h6,
     font-size: $h6-font-size;
 }
 
+a {
+    text-decoration: none;
+}
+
 p {
     color: rgba($color: $white, $alpha: 0.8);
     font-weight: 500;
