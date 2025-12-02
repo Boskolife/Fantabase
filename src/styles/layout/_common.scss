@@ -319,6 +319,16 @@
             text-transform: uppercase;
             color: $white;
         }
+
+        &-description {
+            br{
+                display: none;
+
+                @include media ("<phone") {
+                    display: block;
+                }
+            }
+        }
     }
 }
 
