@@ -1484,6 +1484,14 @@
 
             .team_item-title {
                 line-height: 75%;
+
+                br{
+                    display: none;
+                    
+                    @include media ("<phone") {
+                        display: block;
+                    }
+                }
             }
         }
 
