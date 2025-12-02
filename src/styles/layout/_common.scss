@@ -33,6 +33,14 @@
         @include adaptive-value("font-size", 80, 40, 1);
         max-width: 1000px;
         width: 100%;
+        color: transparent;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 70.45%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 700;
+        line-height: 105%;
+        text-transform: uppercase;
+        letter-spacing: -1.49px;
     }
 }
 
@@ -385,7 +393,7 @@
             letter-spacing: -0.02em;
             text-transform: uppercase;
             color: $white;
-            font-family: Integral CF;
+            font-family: 'Integral', sans-serif;
         }
 
         p {
@@ -796,6 +804,14 @@
 
     &_title {
         @include adaptive-value("margin-bottom", 40, 24, 1);
+        color: transparent;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 70.45%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 700;
+        line-height: 105%;
+        text-transform: uppercase;
+        letter-spacing: -1.49px;
     }
 
     &_inner {
@@ -1511,5 +1527,126 @@
     &_description {
         text-align: center;
         @include adaptive-value("font-size", 21, 14, 1);
+    }
+}
+
+.contact {
+    @include adaptive-value("padding-top", 115, 60, 1);
+    @include adaptive-value("padding-bottom", 40, 60, 1);
+    text-align: center;
+
+    &_bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 90%;
+        z-index: -3;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &_title {
+        @include adaptive-value("font-size", 80, 35, 1);
+        color: transparent;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 70.45%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 700;
+        line-height: 105%;
+        text-transform: uppercase;
+        letter-spacing: -1.49px;
+        margin-bottom: 16px;
+    }
+
+    &_description {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        @include adaptive-value("margin-bottom", 65, 30, 1);
+    }
+
+    &_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        max-width: 620px;
+        width: 100%;
+        margin: 0 auto;
+
+        background: #010101CC;
+        padding: 32px;
+        border-radius: 23px;
+        border: 1px solid #880000;
+        box-shadow: 0px 0px 14.46px 0px #A1050066 inset;
+
+        @include media ("<tablet") {
+            padding: 32px 20px;
+        }
+
+        label {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            pointer-events: none;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        input {
+            border-radius: 64px;
+        }
+
+        textarea {
+            border-radius: 16px;
+            height: 168px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background: #4C146829;
+            border: 1px solid #FF723A;
+            box-shadow: 0px 0px 14.46px 0px #A1050066 inset;
+            padding: 16px;
+            color: $white;
+            font-weight: 500;
+            line-height: 150%;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border-color: #880000;
+                transition: all 0.3s ease;
+            }
+
+            @include placeholder {
+                color: #E5DFD9;
+            }
+        }
+
+        &-button {
+            width: 100%;
+            background: linear-gradient(180deg, #FF723A 0%, #B52F02 100%);
+            border-radius: 24px;
+            padding: 12px;
+            color: $white;
+            font-weight: 500;
+            line-height: 150%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
     }
 }

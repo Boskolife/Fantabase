@@ -140,6 +140,7 @@ body.menu-open {
             transition: color 0.3s ease;
             text-decoration: none;
             border-radius: 8px;
+            font-family: 'Gilroy', sans-serif;
 
             @include media ("<desktop") {
                 font-size: 20px;
