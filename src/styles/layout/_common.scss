@@ -527,13 +527,11 @@
 
     &_image {
         display: block;
-        margin-top: -150px;
         position: relative;
         z-index: -1;
 
         @include media ("<desktop") {
             order: 2;
-            margin-top: 0;
             padding: 0 16px;
         }
     }
@@ -1482,6 +1480,10 @@
                     aspect-ratio: 1/1;
                     margin-bottom: -100px;
                 }
+            }
+
+            .team_item-title {
+                line-height: 75%;
             }
         }
 
