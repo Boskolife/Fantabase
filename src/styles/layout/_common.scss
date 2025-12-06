@@ -1623,17 +1623,17 @@
             overflow: hidden;
         }
 
-        input {
+        &-input {
             border-radius: 64px;
         }
 
-        textarea {
+        &-textarea {
             border-radius: 16px;
             height: 168px;
         }
 
-        input,
-        textarea {
+        &-input,
+        &-textarea {
             width: 100%;
             background: #4C146829;
             border: 1px solid #FF723A;
