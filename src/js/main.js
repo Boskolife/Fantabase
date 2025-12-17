@@ -1,5 +1,4 @@
 import './script.js';
-import './server.js';
 
 function initBurgerMenu() {
   const burger = document.querySelector('.header_burger');
