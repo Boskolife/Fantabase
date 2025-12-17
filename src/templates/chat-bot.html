@@ -1,0 +1,122 @@
+<section id="howieWidget" class="howie-widget" aria-label="Howie chat widget" data-open="false"
+    hidden>
+    <div class="howie-surface">
+        <div id="apiError" class="api-error" role="alert" hidden>
+            <div class="api-error__title">API unavailable</div>
+            <div class="api-error__text">
+                The demo widget is configured with a hardcoded API base URL. If requests fail,
+                check that the API is
+                reachable and CORS allows this origin (<code>http://localhost:3000</code>).
+            </div>
+        </div>
+
+        <header class="howie-header">
+            <div class="howie-avatar" aria-hidden="true">
+                <img src="./images/chat-bot/howie-avatar.png" alt="Howie avatar">
+            </div>
+
+            <div class="howie-headerContent">
+                <div class="howie-title">
+                    <div class="howie-title__text">HI, I'M HOWIE,</div>
+                    <div class="howie-title__text">NEED A HAND?</div>
+                </div>
+
+                <div class="howie-limit">
+                    <div class="howie-limit__label">Question Limit:</div>
+                    <div id="limitCounter" class="howie-limit__count">0/5</div>
+                </div>
+
+                <div id="progressSegments" class="howie-progress" aria-hidden="true">
+                    <span class="howie-progress__segment"></span>
+                    <span class="howie-progress__segment"></span>
+                    <span class="howie-progress__segment"></span>
+                    <span class="howie-progress__segment"></span>
+                    <span class="howie-progress__segment"></span>
+                </div>
+            </div>
+
+            <button id="closeWidget" class="howie-close" type="button" aria-label="Close">
+                ×
+            </button>
+        </header>
+
+        <div class="howie-content">
+            <div id="connectSection" class="howie-connect">
+                <div class="howie-connectCard">
+                    <div class="howie-connectCard__header">
+                        <div class="howie-connect__label">
+                            <img src="./images/chat-bot/sleeper.svg" alt="image not found">
+                            <span class="howie-connect__labelText">SLEEPER</span>
+                        </div>
+                        <button id="closeSleeperConfig" class="howie-connectCard__close"
+                            type="button" aria-label="Close settings">×</button>
+                    </div>
+                    <div class="howie-connectCard__title">Connect your Sleeper account!</div>
+                    <div class="howie-connectCard__desc">
+                        Sync your leagues and players with Fantabase for real-time lineup
+                        insights and smarter trade calls.
+                    </div>
+
+                    <form id="connectForm" class="howie-connectForm" autocomplete="off">
+                        <input id="sleeperUsernameInput" class="howie-connectInput" type="text"
+                            inputmode="text" autocapitalize="none" spellcheck="false"
+                            placeholder="Enter Your Sleeper Nickname"
+                            aria-label="Enter your Sleeper nickname" />
+
+                        <button id="shareNickname" class="howie-button howie-button--primary"
+                            type="submit">
+                            Share My Nickname
+                        </button>
+
+                        <button id="noSleeper" class="howie-button howie-button--secondary"
+                            type="button">
+                            I don't have a Sleeper account
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="messages" class="howie-messages" aria-live="polite" aria-relevant="additions"
+                hidden></div>
+
+            <div id="limitHitSection" class="howie-limitHit" hidden>
+                <div class="howie-limitHit__title">YOU'VE HIT THE<br>DEMO LIMIT.</div>
+                <div class="howie-limitHit__subtitle">Join the waitlist — I'll see you inside
+                    the app.</div>
+
+                <form id="waitlistForm" class="howie-waitlistForm" autocomplete="off">
+                    <input id="waitlistEmail" class="howie-waitlistInput" type="email"
+                        inputmode="email" placeholder="Enter your email"
+                        aria-label="Enter your email" required />
+                    <button class="howie-button howie-button--primary howie-button--waitlist"
+                        type="submit">
+                        Join the waitlist
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <footer id="chatFooter" class="howie-footer">
+            <div class="howie-inputRow">
+                <button id="configureSleeperBtn" class="howie-robotBtn" type="button"
+                    aria-label="Configure Sleeper username" title="Configure Sleeper username">
+                    <img src="./images/chat-bot/mini-bot.svg" alt="Howie avatar">
+                </button>
+
+                <div class="howie-inputPill">
+                    <input id="chatInput" class="howie-chatInput" type="text"
+                        placeholder="Ask anything" aria-label="Chat message" disabled />
+                </div>
+
+                <button id="sendBtn" class="howie-send" type="button" aria-label="Send" disabled>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M22 2L11 13" />
+                        <path d="M22 2l-7 20-4-9-9-4 20-7Z" />
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+</section>

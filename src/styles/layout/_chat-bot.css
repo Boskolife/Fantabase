@@ -1,0 +1,723 @@
+:root {
+    --bg: #050506;
+    --panel: rgba(15, 10, 8, 0.88);
+    --panel-strong: rgba(15, 10, 8, 0.92);
+    --stroke: rgba(255, 255, 255, 0.08);
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.58);
+    --muted2: rgba(255, 255, 255, 0.45);
+    --orange: #ff7a1a;
+    --orange2: #ff4d2d;
+    --red: #e02525;
+    --shadow: rgba(0, 0, 0, 0.55);
+    --white: #FFFFFF;
+}
+
+.howie-widget {
+    width: min(400px, calc(100vw - 32px));
+    position: fixed;
+    right: 18px;
+    bottom: 88px;
+    z-index: 1150;
+    transform-origin: right bottom;
+    overflow: hidden;
+}
+
+.howie-widget[hidden] {
+    display: none !important;
+}
+
+.howie-widget[data-open="true"] {
+    animation: howieOpen 180ms ease-out;
+}
+
+@keyframes howieOpen {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.howie-launcher {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 51;
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    border: 1px solid rgba(232, 81, 2, 0.6);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.82);
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.howie-launcher img {
+    width: 130%;
+    height: 130%;
+    object-fit: cover;
+}
+
+.howie-launcher[data-open="true"] {
+    border-color: rgba(255, 122, 26, 0.3);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 0 6px rgba(255, 122, 26, 0.08);
+}
+
+.howie-launcher[data-open="true"] .howie-launcher__inner {
+    background: radial-gradient(520px 260px at 50% 0%, rgba(255, 122, 26, 0.26), transparent 55%),
+        rgba(0, 0, 0, 0.24);
+}
+
+.howie-launcher:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.howie-launcher__inner {
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(520px 260px at 50% 0%, rgba(255, 122, 26, 0.2), transparent 55%),
+        rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.howie-surface {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: min(580px, calc(100vh - 140px));
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--panel);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+}
+
+.howie-surface::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: radial-gradient(500px 250px at 50% 8%, rgba(255, 100, 50, 0.18), transparent 55%),
+        radial-gradient(400px 200px at 30% 90%, rgba(255, 122, 26, 0.12), transparent 60%);
+    pointer-events: none;
+}
+
+.howie-surface>* {
+    position: relative;
+    z-index: 1;
+}
+
+.api-error {
+    margin: 14px 14px 0;
+    border: 1px solid rgba(255, 122, 26, 0.35);
+    background: rgba(255, 122, 26, 0.08);
+    border-radius: 14px;
+    padding: 10px 12px;
+}
+
+.api-error__title {
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+}
+
+.api-error__text {
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.35;
+}
+
+.api-error code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+/* ============================================
+     HEADER
+     ============================================ */
+.howie-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    padding: 16px 16px 14px;
+    align-items: start;
+}
+
+.howie-headerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Robot Avatar */
+.howie-avatar {
+    width: 88px;
+    height: 99px;
+}
+
+.howie-title {
+    padding-top: 2px;
+}
+
+.howie-title__text {
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    color: #fff;
+}
+
+.howie-close {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+.howie-close:hover {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================
+     QUESTION LIMIT & PROGRESS (inside header)
+     ============================================ */
+.howie-limit {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 4px;
+}
+
+.howie-limit__label {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.howie-limit__count {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.howie-progress {
+    display: flex;
+    gap: 5px;
+}
+
+.howie-progress__segment {
+    flex: 1;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    transition: background 0.2s ease;
+}
+
+.howie-progress__segment.active {
+    background: linear-gradient(90deg, #ff8c46 0%, #ff5c30 100%);
+}
+
+/* ============================================
+     CONTENT AREA
+     ============================================ */
+.howie-content {
+    padding: 12px 16px 8px;
+    flex: 1 1 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.howie-intro {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    padding: 14px 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 14px;
+}
+
+.howie-intro__text {
+    font-size: 13.5px;
+    line-height: 1.25;
+}
+
+.howie-connect__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 120, 60, 0.95);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    margin: 6px 0 10px;
+}
+
+.howie-connect__label img{
+    width: 14px;
+    height: 16px;
+    margin-bottom: 4px;
+}
+
+.howie-connectCard {
+    border-radius: 16px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: radial-gradient(400px 200px at 50% 0%, rgba(255, 122, 26, 0.18), transparent 50%),
+        rgba(30, 18, 12, 0.5);
+}
+
+.howie-connectCard__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.howie-connectCard__header .howie-connect__label {
+    margin: 0;
+}
+
+.howie-connectCard__close {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin: -4px -4px 0 0;
+    font-weight: 300;
+}
+
+.howie-connectCard__close:hover {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.howie-connectCard__title {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.howie-connectCard__desc {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.howie-connectForm {
+    display: grid;
+    gap: 10px;
+}
+
+.howie-connectInput {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 12px 14px;
+    outline: none;
+    font-size: 14px;
+}
+
+.howie-connectInput::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.howie-connectInput:focus {
+    border-color: rgba(255, 122, 26, 0.4);
+}
+
+.howie-button {
+    border-radius: 999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 12px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+}
+
+.howie-button--primary {
+    border: 0;
+    background: linear-gradient(180deg, #ff9246 0%, #ff5830 100%);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(255, 100, 50, 0.3);
+}
+
+.howie-button--primary:hover {
+    filter: brightness(1.05);
+}
+
+.howie-button--secondary {
+    background: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.howie-button--secondary:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================
+     MESSAGES
+     ============================================ */
+.howie-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1 1 auto;
+    min-height: 180px;
+    overflow: auto;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.howie-messages[hidden] {
+    display: none !important;
+}
+
+.howie-connect[hidden] {
+    display: none !important;
+}
+
+.howie-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.howie-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.howie-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.howie-messages:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.22);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.howie-message {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.howie-message__bubble {
+    width: fit-content;
+    max-width: 92%;
+    border-radius: 14px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.howie-message--user {
+    justify-content: flex-end;
+}
+
+.howie-message--user .howie-message__bubble {
+    background: radial-gradient(400px 200px at 50% 0%, rgba(255, 122, 26, 0.15), transparent 50%),
+        rgba(35, 20, 14, 0.5);
+    border-color: rgba(255, 122, 26, 0.18);
+}
+
+.howie-message--assistant .howie-message__bubble {
+    background: rgba(0, 0, 0, 0.28);
+}
+
+/* Loading state */
+.howie-message__bubble--loading {
+    display: flex;
+    align-items: flex-end;
+    min-height: 42px;
+}
+
+.howie-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.howie-spinner {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-top-color: rgba(255, 140, 70, 0.9);
+    animation: howieSpin 0.75s linear infinite;
+}
+
+@keyframes howieSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.howie-loadingText {
+    font-size: 13px;
+}
+
+.howie-dots {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.howie-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    animation: howieDot 1s infinite;
+}
+
+.howie-dot:nth-child(2) {
+    animation-delay: 120ms;
+}
+
+.howie-dot:nth-child(3) {
+    animation-delay: 240ms;
+}
+
+@keyframes howieDot {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.85;
+        transform: translateY(-2px);
+    }
+}
+
+/* ============================================
+     LIMIT HIT STATE
+     ============================================ */
+.howie-limitHit {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 24px;
+}
+
+.howie-limitHit[hidden] {
+    display: none;
+}
+
+.howie-limitHit__title {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.howie-limitHit__subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 28px;
+}
+
+.howie-waitlistForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.howie-waitlistInput {
+    width: 100%;
+    height: 52px;
+    border-radius: 64px !important;
+    border: 1px solid #B52F02 !important;
+    background: rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 0 22px;
+    font-size: 15px;
+    outline: none;
+}
+
+.howie-waitlistInput::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.howie-waitlistInput:focus {
+    border-color: rgba(255, 122, 26, 0.4);
+}
+
+.howie-button--waitlist {
+    height: 52px;
+    font-size: 15px;
+    border-radius: 999px;
+}
+
+/* ============================================
+     FOOTER INPUT
+     ============================================ */
+.howie-footer {
+    padding: 12px 14px 16px;
+}
+
+.howie-inputRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Robot Button (separate circle) */
+.howie-robotBtn {
+    appearance: none;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ff9246 0%, #ff5830 100%);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 16px rgba(255, 100, 50, 0.35);
+    border: none;
+    outline: none;
+}
+
+.howie-robotBtn:hover {
+    border-color: rgba(255, 122, 26, 0.4);
+}
+
+.howie-robotBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Input Pill (separate element) */
+.howie-inputPill {
+    flex: 1;
+    height: 52px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(350px 175px at 50% 0%, rgba(255, 122, 26, 0.1), transparent 50%),
+        rgba(0, 0, 0, 0.28);
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.howie-chatInput {
+    width: 100%;
+    outline: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 14px;
+    border: none !important;
+}
+
+.howie-chatInput::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.howie-chatInput:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Send Button (separate circle) */
+.howie-send {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    border: none !important;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg, #ff9246 0%, #ff5830 100%);
+    color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 16px rgba(255, 100, 50, 0.35);
+}
+
+.howie-send:hover {
+    filter: brightness(1.05);
+}
+
+.howie-send:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ============================================
+     RESPONSIVE
+     ============================================ */
+@media (max-width: 420px) {
+    .howie-title__text {
+        font-size: 19px;
+    }
+
+    .howie-avatar {
+        width: 64px;
+        height: 82px;
+    }
+
+    .howie-header {
+        gap: 12px;
+        padding: 14px 14px 10px;
+    }
+
+    .howie-widget {
+        right: 10px;
+        bottom: 78px;
+        width: calc(100vw - 20px);
+    }
+
+    .howie-launcher {
+        right: 10px;
+        bottom: 10px;
+    }
+}
