@@ -1,6 +1,7 @@
 <section id="howieWidget" class="howie-widget" aria-label="Howie chat widget" data-open="false"
     hidden>
     <div class="howie-surface">
+        <img src="./images/chat-bot/gradient.png" alt= "image not found" class="howie-gradient">
         <div id="apiError" class="api-error" role="alert" hidden>
             <div class="api-error__title">API unavailable</div>
             <div class="api-error__text">
@@ -106,16 +107,21 @@
                 <div class="howie-inputPill">
                     <input id="chatInput" class="howie-chatInput" type="text"
                         placeholder="Ask anything" aria-label="Chat message" disabled />
+                    <button id="sendBtn" class="howie-send" type="button" aria-label="Send"
+                        disabled>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.39969 6.32003L15.8897 3.49003C19.6997 2.22003 21.7697 4.30003 20.5097 8.11003L17.6797 16.6C15.7797 22.31 12.6597 22.31 10.7597 16.6L9.91969 14.08L7.39969 13.24C1.68969 11.34 1.68969 8.23003 7.39969 6.32003Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10.1094 13.6501L13.6894 10.0601" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </button>
                 </div>
 
-                <button id="sendBtn" class="howie-send" type="button" aria-label="Send" disabled>
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M22 2L11 13" />
-                        <path d="M22 2l-7 20-4-9-9-4 20-7Z" />
-                    </svg>
-                </button>
             </div>
         </footer>
     </div>

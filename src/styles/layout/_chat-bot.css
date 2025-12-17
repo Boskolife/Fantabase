@@ -21,6 +21,7 @@
     z-index: 1150;
     transform-origin: right bottom;
     overflow: hidden;
+
 }
 
 .howie-widget[hidden] {
@@ -106,15 +107,24 @@
     overflow: hidden;
     backdrop-filter: blur(20px);
 }
-
+/* 
 .howie-surface::before {
     content: "";
     position: absolute;
     inset: -2px;
     border-radius: 26px;
-    background: radial-gradient(500px 250px at 50% 8%, rgba(255, 100, 50, 0.18), transparent 55%),
-        radial-gradient(400px 200px at 30% 90%, rgba(255, 122, 26, 0.12), transparent 60%);
+    background: linear-gradient(0deg, rgba(215, 67, 4, 0.8) 0%, rgba(215, 67, 4, 0) 100%);
     pointer-events: none;
+} */
+
+.howie-gradient{
+    position: absolute !important;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
 }
 
 .howie-surface>* {
@@ -275,7 +285,7 @@
     margin: 6px 0 10px;
 }
 
-.howie-connect__label img{
+.howie-connect__label img {
     width: 14px;
     height: 16px;
     margin-bottom: 4px;
@@ -338,8 +348,8 @@
 
 .howie-connectInput {
     width: 100%;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 64px !important;
+    border: 1px solid #B52F02 !important;
     background: rgba(0, 0, 0, 0.3);
     color: rgba(255, 255, 255, 0.9) !important;
     padding: 12px 14px;
@@ -377,9 +387,10 @@
 }
 
 .howie-button--secondary {
-    background: rgba(0, 0, 0, 0.25);
+    background: #4C146829;
     border-color: rgba(255, 255, 255, 0.12);
     color: rgba(255, 255, 255, 0.75);
+    box-shadow: inset 2px 2px 3px -1px rgba(255, 255, 255, 0.25);
 }
 
 .howie-button--secondary:hover {
@@ -623,9 +634,16 @@
     cursor: pointer;
     display: grid;
     place-items: center;
-    box-shadow: 0 4px 16px rgba(255, 100, 50, 0.35);
     border: none;
     outline: none;
+
+    background: #4C146829;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+
+    box-shadow: inset 2px 2px 3px -1px rgba(255, 255, 255, 0.25);
 }
 
 .howie-robotBtn:hover {
@@ -640,14 +658,14 @@
 /* Input Pill (separate element) */
 .howie-inputPill {
     flex: 1;
-    height: 52px;
+    height: 56px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: radial-gradient(350px 175px at 50% 0%, rgba(255, 122, 26, 0.1), transparent 50%),
-        rgba(0, 0, 0, 0.28);
+    background: #4C146829;
     display: flex;
     align-items: center;
-    padding: 0 18px;
+    padding: 8px 8px 8px 12px;
+    box-shadow: inset 2px 2px 3px -1px rgba(255, 255, 255, 0.25);
 }
 
 .howie-chatInput {
@@ -670,15 +688,16 @@
 
 /* Send Button (separate circle) */
 .howie-send {
-    width: 52px;
-    height: 52px;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
     flex-shrink: 0;
     border-radius: 999px;
     border: none !important;
     cursor: pointer;
     display: grid;
     place-items: center;
-    background: linear-gradient(180deg, #ff9246 0%, #ff5830 100%);
+    background: var(--white);
     color: rgba(0, 0, 0, 0.85);
     box-shadow: 0 4px 16px rgba(255, 100, 50, 0.35);
 }
@@ -690,6 +709,10 @@
 .howie-send:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+.howie-send svg path {
+    stroke: var(--bg);
 }
 
 /* ============================================
