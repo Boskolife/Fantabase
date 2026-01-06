@@ -1,0 +1,41 @@
+<div class="chat-bot-modal">
+    <button id="closeChatBotModal" class="chat-bot-modal__close" type="button"
+    aria-label="Close settings">×</button>
+    <div class="chat-bot-modal__content">
+        <div class="chat-bot-modal__header">
+            <h2 class="chat-bot-modal__title">Hi, I'm Howie, need a hand?</h2>
+        </div>
+        <div id="connectSection" class="howie-connect">
+            <div class="howie-connectCard">
+                <div class="howie-connectCard__header">
+                    <div class="howie-connect__label">
+                        <img src="./images/chat-bot/sleeper.svg" alt="image not found">
+                        <span class="howie-connect__labelText">SLEEPER</span>
+                    </div>
+                </div>
+                <div class="howie-connectCard__title">Connect your Sleeper account!</div>
+                <div class="howie-connectCard__desc">
+                    Sync your leagues and players with Fantabase for real-time lineup
+                    insights and smarter trade calls.
+                </div>
+
+                <form id="connectForm" class="howie-connectForm" autocomplete="off">
+                    <input id="sleeperUsernameInput" class="howie-connectInput" type="text"
+                        inputmode="text" autocapitalize="none" spellcheck="false"
+                        placeholder="Enter Your Sleeper Nickname"
+                        aria-label="Enter your Sleeper nickname" />
+
+                    <button id="shareNickname" class="howie-button howie-button--primary"
+                        type="submit">
+                        Share My Nickname
+                    </button>
+
+                    <button id="noSleeper" class="howie-button howie-button--secondary"
+                        type="button">
+                        I don't have a Sleeper account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

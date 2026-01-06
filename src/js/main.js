@@ -292,12 +292,78 @@ function updateYear() {
   }
 }
 
+function initChatBotModal() {
+  const chatBotModal = document.querySelector('.chat-bot-modal');
+  const closeChatBotModal = document.querySelector('#closeChatBotModal');
+  const modalSleeperInput = chatBotModal?.querySelector('#sleeperUsernameInput');
+  const modalConnectForm = chatBotModal?.querySelector('#connectForm');
+  const modalShareNicknameBtn = chatBotModal?.querySelector('#shareNickname');
+  const modalNoSleeperBtn = chatBotModal?.querySelector('#noSleeper');
+  const howieWidget = document.getElementById('howieWidget');
+  const howieLauncher = document.getElementById('howieLauncher');
+
+  if (!chatBotModal || !closeChatBotModal) return;
+
+  // Function to update button states based on input value
+  const updateButtonStates = () => {
+    if (!modalSleeperInput || !modalShareNicknameBtn) return;
+    
+    const value = modalSleeperInput.value.trim();
+    modalShareNicknameBtn.disabled = value.length === 0;
+  };
+
+  // Function to close modal and open chat bot
+  const closeModalAndOpenChatBot = () => {
+    chatBotModal.classList.remove('is-visible');
+    
+    if (howieWidget && howieLauncher) {
+      howieWidget.hidden = false;
+      howieWidget.setAttribute('data-open', 'true');
+      howieLauncher.setAttribute('data-open', 'true');
+    }
+  };
+
+  setTimeout(() => {
+    chatBotModal.classList.add('is-visible');
+  }, 3000);
+
+  closeChatBotModal.addEventListener('click', () => {
+    chatBotModal.classList.remove('is-visible');
+  });
+
+  // Update button states on input
+  if (modalSleeperInput) {
+    modalSleeperInput.addEventListener('input', updateButtonStates);
+    // Initialize button states on load
+    updateButtonStates();
+  }
+
+  // Handle form submit in modal
+  if (modalConnectForm) {
+    modalConnectForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const value = modalSleeperInput?.value.trim();
+      if (value && value.length > 0) {
+        closeModalAndOpenChatBot();
+      }
+    });
+  }
+
+  // Handle "I don't have a Sleeper account" button
+  if (modalNoSleeperBtn) {
+    modalNoSleeperBtn.addEventListener('click', () => {
+      closeModalAndOpenChatBot();
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   updateYear();
   initBurgerMenu();
   initNavBar();
   initDifferentiatorsSwiper();
   initMarketStrategySwiper();
+  initChatBotModal();
 });
 
 window.addEventListener('resize', () => {
