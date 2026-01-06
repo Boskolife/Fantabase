@@ -1680,16 +1680,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 550px;
-    width: 100%;
-    height: auto;
-    z-index: 1000;
-    background: rgba(1, 1, 1, 0.9);
-    backdrop-filter: blur(10px);
+    width: 95%;
+    max-width: 600px;
+    background: rgba(3, 8, 8, 0.9);
+    border-radius: 20px;
     padding: 24px;
-    border-radius: 23px;
-    border: 1px solid #880000;
-    box-shadow: 0px 0px 14.46px 0px #A1050066 inset;
+    box-shadow: 0px 0px 5px 0px rgba(242, 242, 242, 0.2) inset, -1px -1px 1.5px -3px rgba(179, 179, 179, 0.5019607843) inset, 1px 1px 1.5px -3px rgba(179, 179, 179, 0.1019607843) inset, 1px 1px 1.5px -5.25px rgba(255, 255, 255, 0.1490196078) inset, -1px -1px 1.5px -5.25px rgba(255, 255, 255, 0.2) inset;
+    overflow: hidden;
 
     opacity: 0;
     visibility: hidden;
@@ -1699,7 +1696,7 @@
     z-index: -1;
 
     @include media ("<tablet") {
-        padding: 24px 16px;
+        padding: 16px;
     }
 
     &.is-visible {
