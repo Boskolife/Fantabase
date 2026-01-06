@@ -1717,18 +1717,24 @@
         border: none;
         outline: none;
         cursor: pointer;
-        transition: all 0.3s ease;
-        color: $white;
-        font-size: 24px;
-        line-height: 1;
-        font-weight: 300;
+        width: 32px;
+        height: 32px;
 
         &:hover {
             color: rgba($color: $white, $alpha: 0.8);
         }
+
+        @include media ("<tablet") {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__title {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 70.45%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
         @include adaptive-value("font-size", 32, 24, 1);
         text-align: center;
         @include adaptive-value("margin-bottom", 24, 16, 1);
